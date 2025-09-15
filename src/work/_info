@@ -1,0 +1,166 @@
+m255
+K4
+z2
+!s11f vlog 2025.1_1 2025.02, Feb 13 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/asic012/Curso_ASIC/FMS
+vfpnew_classifier
+2/home/asic012/repositories/cvfpu/src/fpnew_classifier.sv
+Z0 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z1 DXx4 work 9 fpnew_pkg 0 22 2TYNDz=>:>VLm]73zD6Ll2
+!s110 1756987394
+!i10b 1
+!s100 ^>C:@EOR6`<5i^oRB0CX>1
+I=lbcjodLiV[dFZhIVII>z2
+S1
+Z2 d/home/asic012/repositories/cvfpu/src
+Z3 w1756985475
+8/home/asic012/repositories/cvfpu/src/fpnew_classifier.sv
+F/home/asic012/repositories/cvfpu/src/fpnew_classifier.sv
+!i122 4
+L0 16 59
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2025.1_1;82
+r1
+!s85 0
+31
+!s108 1756987394.000000
+!s107 /home/asic012/repositories/cvfpu/src/fpnew_classifier.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/home/asic012/repositories/cvfpu/src/fpnew_classifier.sv|
+!i113 0
+Z6 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z7 tCvgOpt 0
+vfpnew_opgroup_block
+2/home/asic012/repositories/cvfpu/src/fpnew_opgroup_block.sv
+R0
+R1
+Z8 !s110 1756987422
+!i10b 1
+!s100 S4B]UO=:I8Ae:4?65[>`D3
+IIVJLDjW@CD6D;dZ@SIO2l1
+S1
+R2
+R3
+8/home/asic012/repositories/cvfpu/src/fpnew_opgroup_block.sv
+F/home/asic012/repositories/cvfpu/src/fpnew_opgroup_block.sv
+!i122 5
+L0 16 234
+R4
+R5
+r1
+!s85 0
+31
+Z9 !s108 1756987422.000000
+!s107 /home/asic012/repositories/cvfpu/src/fpnew_opgroup_block.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/home/asic012/repositories/cvfpu/src/fpnew_opgroup_block.sv|
+!i113 0
+R6
+R7
+vfpnew_opgroup_fmt_slice
+2/home/asic012/repositories/cvfpu/src/fpnew_opgroup_fmt_slice.sv
+R0
+R1
+R8
+!i10b 1
+!s100 kdHgYBbVKCBeSG8YDEFQ62
+I9n0dH^P=7g^mgV8k7YE?]1
+S1
+R2
+R3
+8/home/asic012/repositories/cvfpu/src/fpnew_opgroup_fmt_slice.sv
+F/home/asic012/repositories/cvfpu/src/fpnew_opgroup_fmt_slice.sv
+!i122 6
+L0 16 284
+R4
+R5
+r1
+!s85 0
+31
+R9
+!s107 /home/asic012/repositories/cvfpu/src/fpnew_opgroup_fmt_slice.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/home/asic012/repositories/cvfpu/src/fpnew_opgroup_fmt_slice.sv|
+!i113 0
+R6
+R7
+Xfpnew_pkg
+2/home/asic012/repositories/cvfpu/src/fpnew_pkg.sv
+R0
+!s110 1756987388
+!i10b 1
+!s100 SC`4N:ln<fKMd@CHHJC]@1
+I2TYNDz=>:>VLm]73zD6Ll2
+S1
+R2
+R3
+8/home/asic012/repositories/cvfpu/src/fpnew_pkg.sv
+F/home/asic012/repositories/cvfpu/src/fpnew_pkg.sv
+!i122 3
+L0 16 0
+V2TYNDz=>:>VLm]73zD6Ll2
+R5
+r1
+!s85 0
+31
+!s108 1756987388.000000
+!s107 /home/asic012/repositories/cvfpu/src/fpnew_pkg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/home/asic012/repositories/cvfpu/src/fpnew_pkg.sv|
+!i113 0
+R6
+R7
+vfpnew_rounding
+2/home/asic012/repositories/cvfpu/src/fpnew_rounding.sv
+R0
+R1
+Z10 !s110 1756987178
+!i10b 1
+!s100 ;?HJW>6=EdEGBD633GhaI0
+I9@XkzaT6N`4g2UEONUc]?1
+S1
+R2
+R3
+8/home/asic012/repositories/cvfpu/src/fpnew_rounding.sv
+F/home/asic012/repositories/cvfpu/src/fpnew_rounding.sv
+!i122 1
+L0 16 61
+R4
+R5
+r1
+!s85 0
+31
+Z11 !s108 1756987178.000000
+!s107 /home/asic012/repositories/cvfpu/src/fpnew_rounding.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/home/asic012/repositories/cvfpu/src/fpnew_rounding.sv|
+!i113 0
+R6
+R7
+vfpnew_top
+2/home/asic012/repositories/cvfpu/src/fpnew_top.sv
+R0
+R1
+R10
+!i10b 1
+!s100 hb;UeDGYhkmYY>UZl>U]H0
+IZNCN=`i6SA9Z2R5iX:6[z0
+S1
+R2
+R3
+8/home/asic012/repositories/cvfpu/src/fpnew_top.sv
+F/home/asic012/repositories/cvfpu/src/fpnew_top.sv
+!i122 2
+L0 16 180
+R4
+R5
+r1
+!s85 0
+31
+R11
+!s107 /home/asic012/repositories/cvfpu/src/fpnew_top.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/home/asic012/repositories/cvfpu/src/fpnew_top.sv|
+!i113 0
+R6
+R7
