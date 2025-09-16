@@ -44,4 +44,10 @@ fpnew:
     src/fpnew_opgroup_multifmt_slice.sv,
     src/fpnew_rounding.sv,
     src/fpnew_top.sv,
+    src/hub_modules/adder/Exponent_difference.sv,
+    src/hub_modules/adder/FPHUB_adder.sv,
+    src/hub_modules/adder/LZD.sv,
+    src/hub_modules/adder/shifter.sv,
+    src/hub_modules/adder/special_cases_detector.sv,
+    src/hub_modules/adder/special_result_for_adder.sv
   ]

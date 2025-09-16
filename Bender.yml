@@ -8,6 +8,7 @@ package:
 dependencies:
   common_cells: {git: "https://github.com/pulp-platform/common_cells.git",         version: 1.21.0}
   fpu_div_sqrt_mvp: {git: "https://github.com/pulp-platform/fpu_div_sqrt_mvp.git", version: 1.0.4}
+  FPHUB_adder: {git: "https://github.com/HUBformat/FPHUB_adder.git",               version: 1.0.0}
 
 sources:
   - src/fpnew_pkg.sv
@@ -48,3 +49,9 @@ sources:
   - src/fpnew_opgroup_multifmt_slice.sv
   - src/fpnew_rounding.sv
   - src/fpnew_top.sv
+  - src/hub_modules/adder/Exponent_difference.sv
+  - src/hub_modules/adder/FPHUB_adder.sv
+  - src/hub_modules/adder/LZD.sv
+  - src/hub_modules/adder/shifter.sv
+  - src/hub_modules/adder/special_cases_detector.sv
+  - src/hub_modules/adder/special_result_for_adder.sv
