@@ -7,3 +7,6 @@
 [submodule "tb/flexfloat"]
 	path = tb/flexfloat
 	url = https://github.com/oprecomp/flexfloat.git
+[submodule "src/hub_modules/adder"]
+	path = src/hub_modules/adder
+	url = https://github.com/HUBformat/FPHUB_adder.git
