@@ -39,6 +39,16 @@ vlog -work work ./vendor/openc910/C910_RTL_FACTORY/gen_rtl/clk/rtl/*.v
 vlog -work work +incdir+$COMMON_CELLS_INC +incdir+$VENDOR_INC2 \
   ./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/*.v
 
+# Compilar módulos del sumador
+vlog -sv -work work \
+  ./src/hub_modules/adder/special_cases_detector.sv \
+  ./src/hub_modules/adder/special_result_for_adder.sv \
+  ./src/hub_modules/adder/Exponent_difference.sv \
+  ./src/hub_modules/adder/shifter.sv \
+  ./src/hub_modules/adder/LZD.sv \
+  ./src/hub_modules/adder/FPHUB_adder.sv \
+  ./src/hub_modules/adder/fpnew_hub_adder_wrapper.sv
+
 # Compilar los módulos de la FPU que dependen de los paquetes
 vlog -sv -work work +incdir+$COMMON_CELLS_INC +incdir+$FPU_DIV_SQRT_INC +incdir+$VENDOR_INC +incdir+$VENDOR_INC2 \
   ./src/fpnew_cast_multi.sv \
@@ -54,6 +64,7 @@ vlog -sv -work work +incdir+$COMMON_CELLS_INC +incdir+$FPU_DIV_SQRT_INC +incdir+
   ./src/fpnew_opgroup_multifmt_slice.sv \
   ./src/fpnew_rounding.sv \
   ./src/fpnew_top.sv
+
 
 # Compilar el testbench 1
 vlog -sv -work work +incdir+$COMMON_CELLS_INC +incdir+$FPU_DIV_SQRT_INC +incdir+$VENDOR_INC +incdir+$VENDOR_INC2 ./src/tb_fpnew_simple.sv
