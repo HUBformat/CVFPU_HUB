@@ -109,56 +109,53 @@ module fpnew_opgroup_fmt_slice #(
 
       // Instantiate the operation from the selected opgroup
       if (OpGroup == fpnew_pkg::ADDMUL) begin : lane_instance
-        if (op_i == fpnew_pkg::ADD) begin : gen_hub_adder_wrapper
-          fpnew_hub_adder_wrapper #(
-            .FpFormat    ( FpFormat    )
-          ) i_hub_adder_wrapper (
-            .clk_i,
-            .rst_ni,
-            .operands_i( local_operands ),
-            .op_i,
-            .op_mod_i,
-            .in_valid_i ( in_valid ),
-            .in_ready_o ( lane_in_ready[lane] ),
-            .flush_i,
-            .result_o   ( op_result ),
-            .status_o   ( op_status ),
-            .out_valid_o( out_valid ),
-            .out_ready_i( out_ready )
-          );
-        end else begin : gen_fpnew_fma
-          fpnew_fma #(
-            .FpFormat    ( FpFormat    ),
-            .NumPipeRegs ( NumPipeRegs ),
-            .PipeConfig  ( PipeConfig  ),
-            .TagType     ( TagType     ),
-            .AuxType     ( logic       )
-          ) i_fma (
-            .clk_i,
-            .rst_ni,
-            .operands_i      ( local_operands               ),
-            .is_boxed_i      ( is_boxed_i[NUM_OPERANDS-1:0] ),
-            .rnd_mode_i,
-            .op_i,
-            .op_mod_i,
-            .tag_i,
-            .mask_i          ( simd_mask_i[lane]    ),
-            .aux_i           ( vectorial_op         ), // Remember whether operation was vectorial
-            .in_valid_i      ( in_valid             ),
-            .in_ready_o      ( lane_in_ready[lane]  ),
-            .flush_i,
-            .result_o        ( op_result            ),
-            .status_o        ( op_status            ),
-            .extension_bit_o ( lane_ext_bit[lane]   ),
-            .tag_o           ( lane_tags[lane]      ),
-            .mask_o          ( lane_masks[lane]     ),
-            .aux_o           ( lane_vectorial[lane] ),
-            .out_valid_o     ( out_valid            ),
-            .out_ready_i     ( out_ready            ),
-            .busy_o          ( lane_busy[lane]      ),
-            .reg_ena_i
-          );
-        end
+        fpnew_hub_adder_wrapper #(
+          .FpFormat    ( FpFormat    )
+        ) i_hub_adder_wrapper (
+          .clk_i,
+          .rst_ni,
+          .operands_i( local_operands ),
+          .op_i,
+          .op_mod_i,
+          .in_valid_i ( in_valid ),
+          .in_ready_o ( lane_in_ready[lane] ),
+          .flush_i,
+          .result_o   ( op_result ),
+          .status_o   ( op_status ),
+          .out_valid_o( out_valid ),
+          .out_ready_i( out_ready )
+        );
+        // fpnew_fma #(
+        //   .FpFormat    ( FpFormat    ),
+        //   .NumPipeRegs ( NumPipeRegs ),
+        //   .PipeConfig  ( PipeConfig  ),
+        //   .TagType     ( TagType     ),
+        //   .AuxType     ( logic       )
+        // ) i_fma (
+        //   .clk_i,
+        //   .rst_ni,
+        //   .operands_i      ( local_operands               ),
+        //   .is_boxed_i      ( is_boxed_i[NUM_OPERANDS-1:0] ),
+        //   .rnd_mode_i,
+        //   .op_i,
+        //   .op_mod_i,
+        //   .tag_i,
+        //   .mask_i          ( simd_mask_i[lane]    ),
+        //   .aux_i           ( vectorial_op         ), // Remember whether operation was vectorial
+        //   .in_valid_i      ( in_valid             ),
+        //   .in_ready_o      ( lane_in_ready[lane]  ),
+        //   .flush_i,
+        //   .result_o        ( op_result            ),
+        //   .status_o        ( op_status            ),
+        //   .extension_bit_o ( lane_ext_bit[lane]   ),
+        //   .tag_o           ( lane_tags[lane]      ),
+        //   .mask_o          ( lane_masks[lane]     ),
+        //   .aux_o           ( lane_vectorial[lane] ),
+        //   .out_valid_o     ( out_valid            ),
+        //   .out_ready_i     ( out_ready            ),
+        //   .busy_o          ( lane_busy[lane]      ),
+        //   .reg_ena_i
+        // );
         assign lane_is_class[lane]   = 1'b0;
         assign lane_class_mask[lane] = fpnew_pkg::NEGINF;
       end else if (OpGroup == fpnew_pkg::DIVSQRT) begin : lane_instance
