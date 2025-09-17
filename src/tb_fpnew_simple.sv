@@ -153,12 +153,12 @@ module tb_fpnew_simple;
     // Casos de prueba de suma y resta de 16 bits (ejemplos IEEE 754)
     // Suma: 1.0 + 1.0 = 2.0
     // (0x3C00 + 0x3C00 = 0x4000)
-    send_op(16'h3C00, 16'h3C00, fpnew_pkg::ADD, 1'b0, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
+    send_op(16'hFFFF, 16'h7FFF, fpnew_pkg::ADD, 1'b0, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
     assert(result_o == 16'h4000) else $error("Falla en la suma 1.0 + 1.0");
 
     // Resta: 3.0 - 2.0 = 1.0
     // (0x4200 - 0x4000 = 0x3C00)
-    send_op(16'h4200, 16'h4000, fpnew_pkg::ADD, 1'b1, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
+    send_op(16'h4070, 16'h4201, fpnew_pkg::ADD, 1'b1, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
     assert(result_o == 16'h3C00) else $error("Falla en la resta 3.0 - 2.0");
 
     $finish;
