@@ -12,10 +12,10 @@ Z0 !s99 nomlopt
 cModel Technology
 Z1 d/users/asic012/repositories/cvfpu
 T_opt
-!s110 1758097597
-V;f7WJh5@1@ZH?1ha>XUNL3
+!s110 1758099658
+V6K5I7DCL@NRkN8cjO<h1h3
 04 15 4 work tb_fpnew_simple fast 0
-=1-b06ebf3aa87a-68ca70bd-138ee-115d55
+=1-b06ebf3aa87a-68ca78c9-a0b8f-11b6c7
 R0
 !s12f OEM100
 !s12b OEM100
@@ -29,7 +29,7 @@ vaddr_decode
 Z3 2./src/common_cells/src/addr_decode.sv|./src/common_cells/src/binary_to_gray.sv|./src/common_cells/src/cb_filter.sv|./src/common_cells/src/cb_filter_pkg.sv|./src/common_cells/src/cdc_2phase.sv|./src/common_cells/src/cdc_fifo_2phase.sv|./src/common_cells/src/cdc_fifo_gray.sv|./src/common_cells/src/cf_math_pkg.sv|./src/common_cells/src/clk_div.sv|./src/common_cells/src/counter.sv|./src/common_cells/src/delta_counter.sv|./src/common_cells/src/ecc_decode.sv|./src/common_cells/src/ecc_encode.sv|./src/common_cells/src/ecc_pkg.sv|./src/common_cells/src/edge_detect.sv|./src/common_cells/src/edge_propagator.sv|./src/common_cells/src/edge_propagator_rx.sv|./src/common_cells/src/edge_propagator_tx.sv|./src/common_cells/src/exp_backoff.sv|./src/common_cells/src/fall_through_register.sv|./src/common_cells/src/fifo_v3.sv|./src/common_cells/src/gray_to_binary.sv|./src/common_cells/src/id_queue.sv|./src/common_cells/src/isochronous_spill_register.sv|./src/common_cells/src/lfsr.sv|./src/common_cells/src/lfsr_16bit.sv|./src/common_cells/src/lfsr_8bit.sv|./src/common_cells/src/lzc.sv|./src/common_cells/src/max_counter.sv|./src/common_cells/src/mv_filter.sv|./src/common_cells/src/onehot_to_bin.sv|./src/common_cells/src/plru_tree.sv|./src/common_cells/src/popcount.sv|./src/common_cells/src/rr_arb_tree.sv|./src/common_cells/src/rstgen.sv|./src/common_cells/src/rstgen_bypass.sv|./src/common_cells/src/serial_deglitch.sv|./src/common_cells/src/shift_reg.sv|./src/common_cells/src/spill_register.sv|./src/common_cells/src/stream_arbiter.sv|./src/common_cells/src/stream_arbiter_flushable.sv|./src/common_cells/src/stream_delay.sv|./src/common_cells/src/stream_demux.sv|./src/common_cells/src/stream_fifo.sv|./src/common_cells/src/stream_filter.sv|./src/common_cells/src/stream_fork.sv|./src/common_cells/src/stream_fork_dynamic.sv|./src/common_cells/src/stream_intf.sv|./src/common_cells/src/stream_join.sv|./src/common_cells/src/stream_mux.sv|./src/common_cells/src/stream_omega_net.sv|./src/common_cells/src/stream_register.sv|./src/common_cells/src/stream_to_mem.sv|./src/common_cells/src/stream_xbar.sv|./src/common_cells/src/sub_per_hash.sv|./src/common_cells/src/sync.sv|./src/common_cells/src/sync_wedge.sv|./src/common_cells/src/unread.sv
 Z4 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
 Z5 DXx4 work 11 cf_math_pkg 0 22 F^^ZPTE17G_PT0oRAdZE>2
-Z6 !s110 1758097590
+Z6 !s110 1758099616
 !i10b 1
 !s100 JL]:55N<<A8jfc3m`YWl;3
 I?Fe1^K2Uc9ViCV2=gL;cz1
@@ -45,7 +45,7 @@ Z9 OL;L;2025.1_1;82
 r1
 !s85 0
 31
-Z10 !s108 1758097590.000000
+Z10 !s108 1758099615.000000
 Z11 !s107 ./src/common_cells/include/common_cells/registers.svh|./src/common_cells/src/unread.sv|./src/common_cells/src/sync_wedge.sv|./src/common_cells/src/sync.sv|./src/common_cells/src/sub_per_hash.sv|./src/common_cells/src/stream_xbar.sv|./src/common_cells/src/stream_to_mem.sv|./src/common_cells/src/stream_register.sv|./src/common_cells/src/stream_omega_net.sv|./src/common_cells/src/stream_mux.sv|./src/common_cells/src/stream_join.sv|./src/common_cells/src/stream_intf.sv|./src/common_cells/src/stream_fork_dynamic.sv|./src/common_cells/src/stream_fork.sv|./src/common_cells/src/stream_filter.sv|./src/common_cells/src/stream_fifo.sv|./src/common_cells/src/stream_demux.sv|./src/common_cells/src/stream_delay.sv|./src/common_cells/src/stream_arbiter_flushable.sv|./src/common_cells/src/stream_arbiter.sv|./src/common_cells/src/spill_register.sv|./src/common_cells/src/shift_reg.sv|./src/common_cells/src/serial_deglitch.sv|./src/common_cells/src/rstgen_bypass.sv|./src/common_cells/src/rstgen.sv|./src/common_cells/src/rr_arb_tree.sv|./src/common_cells/src/popcount.sv|./src/common_cells/src/plru_tree.sv|./src/common_cells/src/onehot_to_bin.sv|./src/common_cells/src/mv_filter.sv|./src/common_cells/src/max_counter.sv|./src/common_cells/src/lzc.sv|./src/common_cells/src/lfsr_8bit.sv|./src/common_cells/src/lfsr_16bit.sv|./src/common_cells/src/lfsr.sv|./src/common_cells/src/isochronous_spill_register.sv|./src/common_cells/src/id_queue.sv|./src/common_cells/src/gray_to_binary.sv|./src/common_cells/src/fifo_v3.sv|./src/common_cells/src/fall_through_register.sv|./src/common_cells/src/exp_backoff.sv|./src/common_cells/src/edge_propagator_tx.sv|./src/common_cells/src/edge_propagator_rx.sv|./src/common_cells/src/edge_propagator.sv|./src/common_cells/src/edge_detect.sv|./src/common_cells/src/ecc_pkg.sv|./src/common_cells/src/ecc_encode.sv|./src/common_cells/src/ecc_decode.sv|./src/common_cells/src/delta_counter.sv|./src/common_cells/src/counter.sv|./src/common_cells/src/clk_div.sv|./src/common_cells/src/cf_math_pkg.sv|./src/common_cells/src/cdc_fifo_gray.sv|./src/common_cells/src/cdc_fifo_2phase.sv|./src/common_cells/src/cdc_2phase.sv|./src/common_cells/src/cb_filter_pkg.sv|./src/common_cells/src/cb_filter.sv|./src/common_cells/src/binary_to_gray.sv|./src/common_cells/src/addr_decode.sv|
 Z12 !s90 -sv|-work|work|+incdir+./src/common_cells/include|./src/common_cells/src/addr_decode.sv|./src/common_cells/src/binary_to_gray.sv|./src/common_cells/src/cb_filter.sv|./src/common_cells/src/cb_filter_pkg.sv|./src/common_cells/src/cdc_2phase.sv|./src/common_cells/src/cdc_fifo_2phase.sv|./src/common_cells/src/cdc_fifo_gray.sv|./src/common_cells/src/cf_math_pkg.sv|./src/common_cells/src/clk_div.sv|./src/common_cells/src/counter.sv|./src/common_cells/src/delta_counter.sv|./src/common_cells/src/ecc_decode.sv|./src/common_cells/src/ecc_encode.sv|./src/common_cells/src/ecc_pkg.sv|./src/common_cells/src/edge_detect.sv|./src/common_cells/src/edge_propagator.sv|./src/common_cells/src/edge_propagator_rx.sv|./src/common_cells/src/edge_propagator_tx.sv|./src/common_cells/src/exp_backoff.sv|./src/common_cells/src/fall_through_register.sv|./src/common_cells/src/fifo_v3.sv|./src/common_cells/src/gray_to_binary.sv|./src/common_cells/src/id_queue.sv|./src/common_cells/src/isochronous_spill_register.sv|./src/common_cells/src/lfsr.sv|./src/common_cells/src/lfsr_16bit.sv|./src/common_cells/src/lfsr_8bit.sv|./src/common_cells/src/lzc.sv|./src/common_cells/src/max_counter.sv|./src/common_cells/src/mv_filter.sv|./src/common_cells/src/onehot_to_bin.sv|./src/common_cells/src/plru_tree.sv|./src/common_cells/src/popcount.sv|./src/common_cells/src/rr_arb_tree.sv|./src/common_cells/src/rstgen.sv|./src/common_cells/src/rstgen_bypass.sv|./src/common_cells/src/serial_deglitch.sv|./src/common_cells/src/shift_reg.sv|./src/common_cells/src/spill_register.sv|./src/common_cells/src/stream_arbiter.sv|./src/common_cells/src/stream_arbiter_flushable.sv|./src/common_cells/src/stream_delay.sv|./src/common_cells/src/stream_demux.sv|./src/common_cells/src/stream_fifo.sv|./src/common_cells/src/stream_filter.sv|./src/common_cells/src/stream_fork.sv|./src/common_cells/src/stream_fork_dynamic.sv|./src/common_cells/src/stream_intf.sv|./src/common_cells/src/stream_join.sv|./src/common_cells/src/stream_mux.sv|./src/common_cells/src/stream_omega_net.sv|./src/common_cells/src/stream_register.sv|./src/common_cells/src/stream_to_mem.sv|./src/common_cells/src/stream_xbar.sv|./src/common_cells/src/sub_per_hash.sv|./src/common_cells/src/sync.sv|./src/common_cells/src/sync_wedge.sv|./src/common_cells/src/unread.sv|
 !i113 0
@@ -387,12 +387,12 @@ Z28 F./src/fpu_div_sqrt_mvp/hdl/control_mvp.sv
 L0 43 3371
 R9
 31
-R10
-Z29 !s107 ./src/fpu_div_sqrt_mvp/hdl/preprocess_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/nrbd_nrsc_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/norm_div_sqrt_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/iteration_div_sqrt_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/div_sqrt_top_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/div_sqrt_mvp_wrapper.sv|./src/fpu_div_sqrt_mvp/hdl/defs_div_sqrt_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/control_mvp.sv|
-Z30 !s90 -sv|-work|work|+incdir+./src/common_cells/include|+incdir+./src/fpu_div_sqrt_mvp/hdl|./src/fpu_div_sqrt_mvp/hdl/control_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/defs_div_sqrt_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/div_sqrt_mvp_wrapper.sv|./src/fpu_div_sqrt_mvp/hdl/div_sqrt_top_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/iteration_div_sqrt_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/norm_div_sqrt_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/nrbd_nrsc_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/preprocess_mvp.sv|
+Z29 !s108 1758099616.000000
+Z30 !s107 ./src/fpu_div_sqrt_mvp/hdl/preprocess_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/nrbd_nrsc_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/norm_div_sqrt_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/iteration_div_sqrt_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/div_sqrt_top_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/div_sqrt_mvp_wrapper.sv|./src/fpu_div_sqrt_mvp/hdl/defs_div_sqrt_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/control_mvp.sv|
+Z31 !s90 -sv|-work|work|+incdir+./src/common_cells/include|+incdir+./src/fpu_div_sqrt_mvp/hdl|./src/fpu_div_sqrt_mvp/hdl/control_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/defs_div_sqrt_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/div_sqrt_mvp_wrapper.sv|./src/fpu_div_sqrt_mvp/hdl/div_sqrt_top_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/iteration_div_sqrt_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/norm_div_sqrt_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/nrbd_nrsc_mvp.sv|./src/fpu_div_sqrt_mvp/hdl/preprocess_mvp.sv|
 !i113 0
 R13
-Z31 !s92 -sv -work work +incdir+./src/common_cells/include +incdir+./src/fpu_div_sqrt_mvp/hdl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z32 !s92 -sv -work work +incdir+./src/common_cells/include +incdir+./src/fpu_div_sqrt_mvp/hdl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 Xcontrol_mvp_sv_unit
 R24
@@ -415,12 +415,12 @@ R28
 L0 41 0
 R9
 31
-R10
 R29
 R30
+R31
 !i113 0
 R13
-R31
+R32
 R2
 vcounter
 R3
@@ -449,13 +449,13 @@ R13
 R14
 R2
 vct_vfdsu_ctrl
-Z32 2./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ctrl.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_double.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ff1.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_pack.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_prepare.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_round.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_scalar_dp.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_bound_table.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_with_sqrt.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_top.v
+Z33 2./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ctrl.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_double.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ff1.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_pack.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_prepare.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_round.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_scalar_dp.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_bound_table.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_with_sqrt.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_top.v
 R6
 !i10b 1
 !s100 IBo;=RooAQOZ5<Hg?D?7R1
 IQWzYoMS;RGP]FR<9>1dHE3
 R1
-Z33 w1756985475
+Z34 w1756985475
 8./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ctrl.v
 F./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ctrl.v
 !i122 7
@@ -465,21 +465,21 @@ R9
 r1
 !s85 0
 31
-R10
-Z34 !s107 ./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_top.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_with_sqrt.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_bound_table.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_scalar_dp.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_round.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_prepare.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_pack.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ff1.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_double.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ctrl.v|
-Z35 !s90 -work|work|+incdir+./src/common_cells/include|+incdir+./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ctrl.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_double.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ff1.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_pack.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_prepare.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_round.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_scalar_dp.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_bound_table.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_with_sqrt.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_top.v|
+R29
+Z35 !s107 ./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_top.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_with_sqrt.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_bound_table.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_scalar_dp.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_round.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_prepare.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_pack.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ff1.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_double.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ctrl.v|
+Z36 !s90 -work|work|+incdir+./src/common_cells/include|+incdir+./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ctrl.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_double.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ff1.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_pack.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_prepare.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_round.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_scalar_dp.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_bound_table.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_with_sqrt.v|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_top.v|
 !i113 0
-Z36 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z37 !s92 -work work +incdir+./src/common_cells/include +incdir+./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z37 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z38 !s92 -work work +incdir+./src/common_cells/include +incdir+./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 vct_vfdsu_double
-R32
+R33
 R6
 !i10b 1
 !s100 O433na>Bd?AEdLI@gogPV0
 I]>UQODVb5QoLlJ=e_:Tb_0
 R1
-R33
+R34
 8./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_double.v
 F./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_double.v
 !i122 7
@@ -489,21 +489,21 @@ R9
 r1
 !s85 0
 31
-R10
-R34
+R29
 R35
-!i113 0
 R36
+!i113 0
 R37
+R38
 R2
 vct_vfdsu_ff1
-R32
+R33
 R6
 !i10b 1
 !s100 gA3@_bN>i]6HQkdXA^[`?3
 ILTo9TKDOYk?2_`h@ind>i1
 R1
-R33
+R34
 8./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ff1.v
 F./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ff1.v
 !i122 7
@@ -513,21 +513,21 @@ R9
 r1
 !s85 0
 31
-R10
-R34
+R29
 R35
-!i113 0
 R36
+!i113 0
 R37
+R38
 R2
 vct_vfdsu_pack
-R32
+R33
 R6
 !i10b 1
 !s100 cZR6P]^fl=I:O1[8d7Uc52
 IWTzSD]LGkWTcZS;FQ=Hlc2
 R1
-R33
+R34
 8./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_pack.v
 F./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_pack.v
 !i122 7
@@ -537,21 +537,21 @@ R9
 r1
 !s85 0
 31
-R10
-R34
+R29
 R35
-!i113 0
 R36
+!i113 0
 R37
+R38
 R2
 vct_vfdsu_prepare
-R32
+R33
 R6
 !i10b 1
 !s100 HeIV5^hJQ1Mj1lfW]18W91
 IIon^ePDOSA^5gZFdd^_nE0
 R1
-R33
+R34
 8./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_prepare.v
 F./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_prepare.v
 !i122 7
@@ -561,21 +561,21 @@ R9
 r1
 !s85 0
 31
-R10
-R34
+R29
 R35
-!i113 0
 R36
+!i113 0
 R37
+R38
 R2
 vct_vfdsu_round
-R32
+R33
 R6
 !i10b 1
 !s100 ?N_ONoB[m:BW;VU[JUeAz2
 IG71J9VTWk3@WO54ZHEDV61
 R1
-R33
+R34
 8./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_round.v
 F./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_round.v
 !i122 7
@@ -585,45 +585,45 @@ R9
 r1
 !s85 0
 31
-R10
-R34
+R29
 R35
-!i113 0
 R36
+!i113 0
 R37
+R38
 R2
 vct_vfdsu_scalar_dp
-R32
+R33
 R6
 !i10b 1
 !s100 ?<Wddz^7Mf@=dS[FUQ?lz3
 I]om]Q>of86B6omedi;]J?3
 R1
-R33
+R34
 8./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_scalar_dp.v
 F./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_scalar_dp.v
 !i122 7
-Z38 L0 18 326
+Z39 L0 18 326
 R8
 R9
 r1
 !s85 0
 31
-R10
-R34
+R29
 R35
-!i113 0
 R36
+!i113 0
 R37
+R38
 R2
 vct_vfdsu_srt
-R32
+R33
 R6
 !i10b 1
 !s100 4DmhK^RVfP6^4hCK0_;Jh3
 I]?FD46Mfg>4Lb]A7`znUY0
 R1
-R33
+R34
 8./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt.v
 F./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt.v
 !i122 7
@@ -633,21 +633,21 @@ R9
 r1
 !s85 0
 31
-R10
-R34
+R29
 R35
-!i113 0
 R36
+!i113 0
 R37
+R38
 R2
 vct_vfdsu_srt_radix16_bound_table
-R32
+R33
 R6
 !i10b 1
 !s100 lVS0O:UU7UM=8z@;MHNI83
 I9aFTXBZIzi:gbTJIGnQng1
 R1
-R33
+R34
 8./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_bound_table.v
 F./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_bound_table.v
 !i122 7
@@ -657,21 +657,21 @@ R9
 r1
 !s85 0
 31
-R10
-R34
+R29
 R35
-!i113 0
 R36
+!i113 0
 R37
+R38
 R2
 vct_vfdsu_srt_radix16_with_sqrt
-R32
+R33
 R6
 !i10b 1
 !s100 jkQ2]UNHh@z10lUTkH<R13
 I`SQKb7j`??K0<EK_hDYf_0
 R1
-R33
+R34
 8./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_with_sqrt.v
 F./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_srt_radix16_with_sqrt.v
 !i122 7
@@ -681,36 +681,36 @@ R9
 r1
 !s85 0
 31
-R10
-R34
+R29
 R35
-!i113 0
 R36
+!i113 0
 R37
+R38
 R2
 vct_vfdsu_top
-R32
+R33
 R6
 !i10b 1
 !s100 ZCk<hmCI8_[Sb=ckj=?@Z0
 I9nMCgd[]1eRLMVRYB1HPK1
 R1
-R33
+R34
 8./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_top.v
 F./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_top.v
 !i122 7
-R38
+R39
 R8
 R9
 r1
 !s85 0
 31
-R10
-R34
+R29
 R35
-!i113 0
 R36
+!i113 0
 R37
+R38
 R2
 Xdefs_div_sqrt_mvp
 R24
@@ -731,12 +731,12 @@ R9
 r1
 !s85 0
 31
-R10
 R29
 R30
+R31
 !i113 0
 R13
-R31
+R32
 R2
 vdelta_counter
 R3
@@ -780,18 +780,18 @@ I<ePJH>AX;6c_OKUgV4K_Y3
 S1
 R1
 R26
-Z39 8./src/fpu_div_sqrt_mvp/hdl/div_sqrt_mvp_wrapper.sv
-Z40 F./src/fpu_div_sqrt_mvp/hdl/div_sqrt_mvp_wrapper.sv
+Z40 8./src/fpu_div_sqrt_mvp/hdl/div_sqrt_mvp_wrapper.sv
+Z41 F./src/fpu_div_sqrt_mvp/hdl/div_sqrt_mvp_wrapper.sv
 !i122 4
 L0 41 192
 R9
 31
-R10
 R29
 R30
+R31
 !i113 0
 R13
-R31
+R32
 R2
 Xdiv_sqrt_mvp_wrapper_sv_unit
 R24
@@ -808,18 +808,18 @@ IA9fCB@jRKb<^KMha7dCMf2
 S1
 R1
 R26
-R39
 R40
+R41
 !i122 4
 L0 39 0
 R9
 31
-R10
 R29
 R30
+R31
 !i113 0
 R13
-R31
+R32
 R2
 vdiv_sqrt_top_mvp
 R24
@@ -837,18 +837,18 @@ I`?=bDNo?8NAV=RPIc2J7:3
 S1
 R1
 R26
-Z41 8./src/fpu_div_sqrt_mvp/hdl/div_sqrt_top_mvp.sv
-Z42 F./src/fpu_div_sqrt_mvp/hdl/div_sqrt_top_mvp.sv
+Z42 8./src/fpu_div_sqrt_mvp/hdl/div_sqrt_top_mvp.sv
+Z43 F./src/fpu_div_sqrt_mvp/hdl/div_sqrt_top_mvp.sv
 !i122 4
 L0 37 144
 R9
 31
-R10
 R29
 R30
+R31
 !i113 0
 R13
-R31
+R32
 R2
 Xdiv_sqrt_top_mvp_sv_unit
 R24
@@ -865,23 +865,23 @@ Il3A8^e20DMikJA@5FOAUn2
 S1
 R1
 R26
-R41
 R42
+R43
 !i122 4
-Z43 L0 35 0
+Z44 L0 35 0
 R9
 31
-R10
 R29
 R30
+R31
 !i113 0
 R13
-R31
+R32
 R2
 vecc_decode
 R3
 R4
-Z44 DXx4 work 7 ecc_pkg 0 22 RDXb5?BR3S]dan5Q]E3WG1
+Z45 DXx4 work 7 ecc_pkg 0 22 RDXb5?BR3S]dan5Q]E3WG1
 R6
 !i10b 1
 !s100 oE3eP`CP]e;I6n:OgQ`fI0
@@ -908,7 +908,7 @@ R2
 vecc_encode
 R3
 R4
-R44
+R45
 R6
 !i10b 1
 !s100 hZ19Y2dDEUD`HXW0m]=3]0
@@ -1089,17 +1089,17 @@ R13
 R14
 R2
 vExponent_difference
-Z45 2./src/special_cases_detector.sv|./src/special_result_for_adder.sv|./src/Exponent_difference.sv|./src/shifter.sv|./src/LZD.sv|./src/FPHUB_adder.sv|./src/fpnew_hub_adder_wrapper.sv
+Z46 2./src/hub_modules/adder/special_cases_detector.sv|./src/hub_modules/adder/special_result_for_adder.sv|./src/hub_modules/adder/Exponent_difference.sv|./src/hub_modules/adder/shifter.sv|./src/hub_modules/adder/LZD.sv|./src/hub_modules/adder/FPHUB_adder.sv|./src/hub_modules/adder/fpnew_hub_adder_wrapper.sv
 R4
-Z46 !s110 1758097591
+R6
 !i10b 1
 !s100 OVC;lYXZNcTA>o:VdP9;B2
-I]n9GbdajR9367a7mU54=?0
+ImT8FO3edLmX6PU2nzzc@N3
 S1
 R1
 Z47 w1758092575
-8./src/Exponent_difference.sv
-F./src/Exponent_difference.sv
+8./src/hub_modules/adder/Exponent_difference.sv
+F./src/hub_modules/adder/Exponent_difference.sv
 !i122 8
 L0 17 34
 R8
@@ -1107,9 +1107,9 @@ R9
 r1
 !s85 0
 31
-R10
-Z48 !s107 ./src/fpnew_hub_adder_wrapper.sv|./src/FPHUB_adder.sv|./src/LZD.sv|./src/shifter.sv|./src/Exponent_difference.sv|./src/special_result_for_adder.sv|./src/special_cases_detector.sv|
-Z49 !s90 -sv|-work|work|./src/special_cases_detector.sv|./src/special_result_for_adder.sv|./src/Exponent_difference.sv|./src/shifter.sv|./src/LZD.sv|./src/FPHUB_adder.sv|./src/fpnew_hub_adder_wrapper.sv|
+R29
+Z48 !s107 ./src/hub_modules/adder/fpnew_hub_adder_wrapper.sv|./src/hub_modules/adder/FPHUB_adder.sv|./src/hub_modules/adder/LZD.sv|./src/hub_modules/adder/shifter.sv|./src/hub_modules/adder/Exponent_difference.sv|./src/hub_modules/adder/special_result_for_adder.sv|./src/hub_modules/adder/special_cases_detector.sv|
+Z49 !s90 -sv|-work|work|./src/hub_modules/adder/special_cases_detector.sv|./src/hub_modules/adder/special_result_for_adder.sv|./src/hub_modules/adder/Exponent_difference.sv|./src/hub_modules/adder/shifter.sv|./src/hub_modules/adder/LZD.sv|./src/hub_modules/adder/FPHUB_adder.sv|./src/hub_modules/adder/fpnew_hub_adder_wrapper.sv|
 !i113 0
 R13
 R2
@@ -1167,17 +1167,17 @@ R13
 R14
 R2
 vFPHUB_adder
-R45
-R4
 R46
+R4
+R6
 !i10b 1
 !s100 69hkhD?VKY2PZeP8iF>T]3
-IiCbXe2Ei?nF6GM;@`hk<j2
+IE3cL=6jA7DO__@_Kkl5<k2
 S1
 R1
 w1758092951
-8./src/FPHUB_adder.sv
-F./src/FPHUB_adder.sv
+8./src/hub_modules/adder/FPHUB_adder.sv
+F./src/hub_modules/adder/FPHUB_adder.sv
 !i122 8
 L0 27 561
 R8
@@ -1185,7 +1185,7 @@ R9
 r1
 !s85 0
 31
-R10
+R29
 R48
 R49
 !i113 0
@@ -1196,13 +1196,13 @@ vfpnew_cast_multi
 Z50 2./src/fpnew_cast_multi.sv|./src/fpnew_classifier.sv|./src/fpnew_divsqrt_multi.sv|./src/fpnew_divsqrt_th_32.sv|./src/fpnew_divsqrt_th_64_multi.sv|./src/fpnew_fma.sv|./src/fpnew_fma_multi.sv|./src/fpnew_noncomp.sv|./src/fpnew_opgroup_block.sv|./src/fpnew_opgroup_fmt_slice.sv|./src/fpnew_opgroup_multifmt_slice.sv|./src/fpnew_rounding.sv|./src/fpnew_top.sv
 R4
 Z51 DXx4 work 9 fpnew_pkg 0 22 Vl5mmOOoocVhc9hlYOL:j0
-R46
+R6
 !i10b 1
 !s100 TD]`I13]UQb0XMX:OQz1@2
 I9gR>?KQ^ajJbmJOPM>CAD2
 S1
 R1
-R33
+R34
 8./src/fpnew_cast_multi.sv
 F./src/fpnew_cast_multi.sv
 !i122 9
@@ -1212,24 +1212,24 @@ R9
 r1
 !s85 0
 31
-Z52 !s108 1758097591.000000
-Z53 !s107 ./src/common_cells/include/common_cells/registers.svh|./src/fpnew_top.sv|./src/fpnew_rounding.sv|./src/fpnew_opgroup_multifmt_slice.sv|./src/fpnew_opgroup_fmt_slice.sv|./src/fpnew_opgroup_block.sv|./src/fpnew_noncomp.sv|./src/fpnew_fma_multi.sv|./src/fpnew_fma.sv|./src/fpnew_divsqrt_th_64_multi.sv|./src/fpnew_divsqrt_th_32.sv|./src/fpnew_divsqrt_multi.sv|./src/fpnew_classifier.sv|./src/fpnew_cast_multi.sv|
-Z54 !s90 -sv|-work|work|+incdir+./src/common_cells/include|+incdir+./src/fpu_div_sqrt_mvp/hdl|+incdir+./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl|+incdir+./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl|./src/fpnew_cast_multi.sv|./src/fpnew_classifier.sv|./src/fpnew_divsqrt_multi.sv|./src/fpnew_divsqrt_th_32.sv|./src/fpnew_divsqrt_th_64_multi.sv|./src/fpnew_fma.sv|./src/fpnew_fma_multi.sv|./src/fpnew_noncomp.sv|./src/fpnew_opgroup_block.sv|./src/fpnew_opgroup_fmt_slice.sv|./src/fpnew_opgroup_multifmt_slice.sv|./src/fpnew_rounding.sv|./src/fpnew_top.sv|
+R29
+Z52 !s107 ./src/common_cells/include/common_cells/registers.svh|./src/fpnew_top.sv|./src/fpnew_rounding.sv|./src/fpnew_opgroup_multifmt_slice.sv|./src/fpnew_opgroup_fmt_slice.sv|./src/fpnew_opgroup_block.sv|./src/fpnew_noncomp.sv|./src/fpnew_fma_multi.sv|./src/fpnew_fma.sv|./src/fpnew_divsqrt_th_64_multi.sv|./src/fpnew_divsqrt_th_32.sv|./src/fpnew_divsqrt_multi.sv|./src/fpnew_classifier.sv|./src/fpnew_cast_multi.sv|
+Z53 !s90 -sv|-work|work|+incdir+./src/common_cells/include|+incdir+./src/fpu_div_sqrt_mvp/hdl|+incdir+./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl|+incdir+./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl|./src/fpnew_cast_multi.sv|./src/fpnew_classifier.sv|./src/fpnew_divsqrt_multi.sv|./src/fpnew_divsqrt_th_32.sv|./src/fpnew_divsqrt_th_64_multi.sv|./src/fpnew_fma.sv|./src/fpnew_fma_multi.sv|./src/fpnew_noncomp.sv|./src/fpnew_opgroup_block.sv|./src/fpnew_opgroup_fmt_slice.sv|./src/fpnew_opgroup_multifmt_slice.sv|./src/fpnew_rounding.sv|./src/fpnew_top.sv|
 !i113 0
 R13
-Z55 !s92 -sv -work work +incdir+./src/common_cells/include +incdir+./src/fpu_div_sqrt_mvp/hdl +incdir+./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl +incdir+./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z54 !s92 -sv -work work +incdir+./src/common_cells/include +incdir+./src/fpu_div_sqrt_mvp/hdl +incdir+./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl +incdir+./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 vfpnew_classifier
 R50
 R4
 R51
-R46
+R6
 !i10b 1
 !s100 ^>C:@EOR6`<5i^oRB0CX>1
 IC[fFdLT1:S7Gm54MWQBQT3
 S1
 R1
-R33
+R34
 8./src/fpnew_classifier.sv
 F./src/fpnew_classifier.sv
 !i122 9
@@ -1239,24 +1239,24 @@ R9
 r1
 !s85 0
 31
+R29
 R52
 R53
-R54
 !i113 0
 R13
-R55
+R54
 R2
 vfpnew_divsqrt_multi
 R50
 R4
 R51
-R46
+R6
 !i10b 1
 !s100 o[SEWbP:5KcBh?IOUO<O13
 ILc0a6BZ;dkNeb[lM]dJOQ0
 S1
 R1
-R33
+R34
 8./src/fpnew_divsqrt_multi.sv
 F./src/fpnew_divsqrt_multi.sv
 !i122 9
@@ -1266,24 +1266,24 @@ R9
 r1
 !s85 0
 31
+R29
 R52
 R53
-R54
 !i113 0
 R13
-R55
+R54
 R2
 vfpnew_divsqrt_th_32
 R50
 R4
 R51
-R46
+R6
 !i10b 1
 !s100 2mG?]PT:kPcdKJHo_?oX23
 ILlFndiiz?^H0gTBOzWA:J2
 S1
 R1
-R33
+R34
 8./src/fpnew_divsqrt_th_32.sv
 F./src/fpnew_divsqrt_th_32.sv
 !i122 9
@@ -1293,24 +1293,24 @@ R9
 r1
 !s85 0
 31
+R29
 R52
 R53
-R54
 !i113 0
 R13
-R55
+R54
 R2
 vfpnew_divsqrt_th_64_multi
 R50
 R4
 R51
-R46
+R6
 !i10b 1
 !s100 dn?3_QD3L6<0mPe>88f=U3
 Id?VD]_=H5:>0lIbgA4RTR0
 S1
 R1
-R33
+R34
 8./src/fpnew_divsqrt_th_64_multi.sv
 F./src/fpnew_divsqrt_th_64_multi.sv
 !i122 9
@@ -1320,24 +1320,24 @@ R9
 r1
 !s85 0
 31
+R29
 R52
 R53
-R54
 !i113 0
 R13
-R55
+R54
 R2
 vfpnew_fma
 R50
 R4
 R51
-R46
+R6
 !i10b 1
 !s100 ADOYc4MOmC`Se[<643NCB0
 IcOIk7:C1kLLHdcmb69z^d2
 S1
 R1
-R33
+R34
 8./src/fpnew_fma.sv
 F./src/fpnew_fma.sv
 !i122 9
@@ -1347,24 +1347,24 @@ R9
 r1
 !s85 0
 31
+R29
 R52
 R53
-R54
 !i113 0
 R13
-R55
+R54
 R2
 vfpnew_fma_multi
 R50
 R4
 R51
-R46
+R6
 !i10b 1
 !s100 0962@7AIh[WO5EiO>agfS0
 IP4l]c=Wk2YjIEmg]3nfN13
 S1
 R1
-R33
+R34
 8./src/fpnew_fma_multi.sv
 F./src/fpnew_fma_multi.sv
 !i122 9
@@ -1374,26 +1374,26 @@ R9
 r1
 !s85 0
 31
+R29
 R52
 R53
-R54
 !i113 0
 R13
-R55
+R54
 R2
 vfpnew_hub_adder_wrapper
-R45
+R46
 R4
 R51
-R46
+R6
 !i10b 1
 !s100 Xf280]4;S@?F1QRZ=@>mF2
-IUPTPFK6CW0jK:aV[I[3id2
+IkoBU2J=mHBNHcdn_IdI^<3
 S1
 R1
 w1758096787
-8./src/fpnew_hub_adder_wrapper.sv
-F./src/fpnew_hub_adder_wrapper.sv
+8./src/hub_modules/adder/fpnew_hub_adder_wrapper.sv
+F./src/hub_modules/adder/fpnew_hub_adder_wrapper.sv
 !i122 8
 L0 1 61
 R8
@@ -1401,7 +1401,7 @@ R9
 r1
 !s85 0
 31
-R10
+R29
 R48
 R49
 !i113 0
@@ -1411,13 +1411,13 @@ vfpnew_noncomp
 R50
 R4
 R51
-R46
+R6
 !i10b 1
 !s100 GNCcfU>_<ij^>2PW8407i3
 IWiLYVXb6IbIJWAz]bRY:42
 S1
 R1
-R33
+R34
 8./src/fpnew_noncomp.sv
 F./src/fpnew_noncomp.sv
 !i122 9
@@ -1427,24 +1427,24 @@ R9
 r1
 !s85 0
 31
+R29
 R52
 R53
-R54
 !i113 0
 R13
-R55
+R54
 R2
 vfpnew_opgroup_block
 R50
 R4
 R51
-R46
+R6
 !i10b 1
 !s100 S4B]UO=:I8Ae:4?65[>`D3
 I=4z>9?]NO:Y;Ik634KdD90
 S1
 R1
-R33
+R34
 8./src/fpnew_opgroup_block.sv
 F./src/fpnew_opgroup_block.sv
 !i122 9
@@ -1454,18 +1454,18 @@ R9
 r1
 !s85 0
 31
+R29
 R52
 R53
-R54
 !i113 0
 R13
-R55
+R54
 R2
 vfpnew_opgroup_fmt_slice
 R50
 R4
 R51
-R46
+R6
 !i10b 1
 !s100 EaTmjQCfb0QT@1kLfF4jN2
 Imdhd7A261omcCEmaka7ee3
@@ -1481,24 +1481,24 @@ R9
 r1
 !s85 0
 31
+R29
 R52
 R53
-R54
 !i113 0
 R13
-R55
+R54
 R2
 vfpnew_opgroup_multifmt_slice
 R50
 R4
 R51
-R46
+R6
 !i10b 1
 !s100 6?]c487nKg6>af3:84[dN1
 Ig33;zFgTA5;oh6MUO@:VB1
 S1
 R1
-R33
+R34
 8./src/fpnew_opgroup_multifmt_slice.sv
 F./src/fpnew_opgroup_multifmt_slice.sv
 !i122 9
@@ -1508,27 +1508,27 @@ R9
 r1
 !s85 0
 31
+R29
 R52
 R53
-R54
 !i113 0
 R13
-R55
+R54
 R2
 Xfpnew_pkg
 2./src/fpnew_pkg.sv
 R4
-R6
+!s110 1758099615
 !i10b 1
 !s100 SC`4N:ln<fKMd@CHHJC]@1
 IVl5mmOOoocVhc9hlYOL:j0
 S1
 R1
-R33
+R34
 8./src/fpnew_pkg.sv
 F./src/fpnew_pkg.sv
 !i122 2
-Z56 L0 16 0
+Z55 L0 16 0
 VVl5mmOOoocVhc9hlYOL:j0
 R9
 r1
@@ -1539,19 +1539,19 @@ R10
 !s90 -sv|-work|work|+incdir+./src/common_cells/include|+incdir+./src/fpu_div_sqrt_mvp/hdl|./src/fpnew_pkg.sv|
 !i113 0
 R13
-R31
+R32
 R2
 vfpnew_rounding
 R50
 R4
 R51
-R46
+R6
 !i10b 1
 !s100 ;?HJW>6=EdEGBD633GhaI0
 Ibf98YEZ?>gl1GQOiF@ln@1
 S1
 R1
-R33
+R34
 8./src/fpnew_rounding.sv
 F./src/fpnew_rounding.sv
 !i122 9
@@ -1561,24 +1561,24 @@ R9
 r1
 !s85 0
 31
+R29
 R52
 R53
-R54
 !i113 0
 R13
-R55
+R54
 R2
 vfpnew_top
 R50
 R4
 R51
-R46
+R6
 !i10b 1
 !s100 hb;UeDGYhkmYY>UZl>U]H0
 IkRlUQ7k0;m<LDzL=POB^W3
 S1
 R1
-R33
+R34
 8./src/fpnew_top.sv
 F./src/fpnew_top.sv
 !i122 9
@@ -1588,12 +1588,12 @@ R9
 r1
 !s85 0
 31
+R29
 R52
 R53
-R54
 !i113 0
 R13
-R55
+R54
 R2
 vgated_clk_cell
 2./vendor/openc910/C910_RTL_FACTORY/gen_rtl/clk/rtl/gated_clk_cell.v
@@ -1602,21 +1602,21 @@ R6
 !s100 e`z_cPdZ:A]_6D4Bk0zb?0
 I8OPJJNzXn:4aQU3b>Ma=Q2
 R1
-R33
+R34
 8./vendor/openc910/C910_RTL_FACTORY/gen_rtl/clk/rtl/gated_clk_cell.v
 F./vendor/openc910/C910_RTL_FACTORY/gen_rtl/clk/rtl/gated_clk_cell.v
 !i122 6
-Z57 L0 16 34
+Z56 L0 16 34
 R8
 R9
 r1
 !s85 0
 31
-R10
+R29
 !s107 ./vendor/openc910/C910_RTL_FACTORY/gen_rtl/clk/rtl/gated_clk_cell.v|
 !s90 -work|work|./vendor/openc910/C910_RTL_FACTORY/gen_rtl/clk/rtl/gated_clk_cell.v|
 !i113 0
-R36
+R37
 R2
 vgray_to_binary
 R3
@@ -1743,12 +1743,12 @@ R9
 r1
 !s85 0
 31
-R10
 R29
 R30
+R31
 !i113 0
 R13
-R31
+R32
 R2
 vlfsr
 R3
@@ -1856,17 +1856,17 @@ R13
 R14
 R2
 vLZD
-R45
-R4
 R46
+R4
+R6
 !i10b 1
 !s100 GaQ;k>gi:nADghHg`a:5R3
-Ik61D@3ILW>?fR@Y9OPWBK3
+IFYzkDT=70_c]R5TN^c4K11
 S1
 R1
 R47
-8./src/LZD.sv
-F./src/LZD.sv
+8./src/hub_modules/adder/LZD.sv
+F./src/hub_modules/adder/LZD.sv
 !i122 8
 L0 19 55
 R8
@@ -1874,7 +1874,7 @@ R9
 r1
 !s85 0
 31
-R10
+R29
 R48
 R49
 !i113 0
@@ -1949,18 +1949,18 @@ I?7=DZ`4DkN6lXI7oSj@OH2
 S1
 R1
 R7
-Z58 8./src/fpu_div_sqrt_mvp/hdl/norm_div_sqrt_mvp.sv
-Z59 F./src/fpu_div_sqrt_mvp/hdl/norm_div_sqrt_mvp.sv
+Z57 8./src/fpu_div_sqrt_mvp/hdl/norm_div_sqrt_mvp.sv
+Z58 F./src/fpu_div_sqrt_mvp/hdl/norm_div_sqrt_mvp.sv
 !i122 4
 L0 46 425
 R9
 31
-R10
 R29
 R30
+R31
 !i113 0
 R13
-R31
+R32
 R2
 Xnorm_div_sqrt_mvp_sv_unit
 R24
@@ -1977,18 +1977,18 @@ I8BSo9ZJo>?UDecWMXNgYY0
 S1
 R1
 R7
+R57
 R58
-R59
 !i122 4
 L0 44 0
 R9
 31
-R10
 R29
 R30
+R31
 !i113 0
 R13
-R31
+R32
 R2
 vnrbd_nrsc_mvp
 R24
@@ -2006,18 +2006,18 @@ IIfHGV8ZnJBOT5Gl`Z;S<K0
 S1
 R1
 R26
-Z60 8./src/fpu_div_sqrt_mvp/hdl/nrbd_nrsc_mvp.sv
-Z61 F./src/fpu_div_sqrt_mvp/hdl/nrbd_nrsc_mvp.sv
+Z59 8./src/fpu_div_sqrt_mvp/hdl/nrbd_nrsc_mvp.sv
+Z60 F./src/fpu_div_sqrt_mvp/hdl/nrbd_nrsc_mvp.sv
 !i122 4
 L0 36 69
 R9
 31
-R10
 R29
 R30
+R31
 !i113 0
 R13
-R31
+R32
 R2
 Xnrbd_nrsc_mvp_sv_unit
 R24
@@ -2034,18 +2034,18 @@ I@bF:NW8@nWWe=h9W]ZAZ;0
 S1
 R1
 R26
+R59
 R60
-R61
 !i122 4
 L0 34 0
 R9
 31
-R10
 R29
 R30
+R31
 !i113 0
 R13
-R31
+R32
 R2
 vonehot_to_bin
 R3
@@ -2074,7 +2074,7 @@ R13
 R14
 R2
 vpa_fdsu_ctrl
-Z62 2./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ctrl.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ff1.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_pack_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_prepare.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_round_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_special.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_srt_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_top.v
+Z61 2./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ctrl.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ff1.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_pack_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_prepare.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_round_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_special.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_srt_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_top.v
 R4
 R6
 !i10b 1
@@ -2082,7 +2082,7 @@ R6
 IJ=49Rfho0zG6:]P^`7ReN0
 S1
 R1
-R33
+R34
 8./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ctrl.v
 F./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ctrl.v
 !i122 5
@@ -2092,15 +2092,15 @@ R9
 r1
 !s85 0
 31
-R10
-Z63 !s107 ./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_top.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_srt_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_special.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_round_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_prepare.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_pack_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ff1.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ctrl.v|
-Z64 !s90 -sv|-work|work|+incdir+./src/common_cells/include|+incdir+./src/fpu_div_sqrt_mvp/hdl|+incdir+./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ctrl.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ff1.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_pack_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_prepare.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_round_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_special.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_srt_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_top.v|
+R29
+Z62 !s107 ./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_top.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_srt_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_special.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_round_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_prepare.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_pack_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ff1.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ctrl.v|
+Z63 !s90 -sv|-work|work|+incdir+./src/common_cells/include|+incdir+./src/fpu_div_sqrt_mvp/hdl|+incdir+./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ctrl.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ff1.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_pack_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_prepare.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_round_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_special.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_srt_single.v|./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_top.v|
 !i113 0
 R13
-Z65 !s92 -sv -work work +incdir+./src/common_cells/include +incdir+./src/fpu_div_sqrt_mvp/hdl +incdir+./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z64 !s92 -sv -work work +incdir+./src/common_cells/include +incdir+./src/fpu_div_sqrt_mvp/hdl +incdir+./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 vpa_fdsu_ff1
-R62
+R61
 R4
 R6
 !i10b 1
@@ -2108,7 +2108,7 @@ R6
 I8_F>NAcb9ciGz@55KVT5e1
 S1
 R1
-R33
+R34
 8./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ff1.v
 F./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_ff1.v
 !i122 5
@@ -2118,15 +2118,15 @@ R9
 r1
 !s85 0
 31
-R10
+R29
+R62
 R63
-R64
 !i113 0
 R13
-R65
+R64
 R2
 vpa_fdsu_pack_single
-R62
+R61
 R4
 R6
 !i10b 1
@@ -2134,7 +2134,7 @@ R6
 I6;GZGHIBGbnP@R;FWVKGY0
 S1
 R1
-R33
+R34
 8./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_pack_single.v
 F./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_pack_single.v
 !i122 5
@@ -2144,15 +2144,15 @@ R9
 r1
 !s85 0
 31
-R10
+R29
+R62
 R63
-R64
 !i113 0
 R13
-R65
+R64
 R2
 vpa_fdsu_prepare
-R62
+R61
 R4
 R6
 !i10b 1
@@ -2160,7 +2160,7 @@ R6
 IHHTHNZ5U@P58MD0SB?onA2
 S1
 R1
-R33
+R34
 8./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_prepare.v
 F./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_prepare.v
 !i122 5
@@ -2170,15 +2170,15 @@ R9
 r1
 !s85 0
 31
-R10
+R29
+R62
 R63
-R64
 !i113 0
 R13
-R65
+R64
 R2
 vpa_fdsu_round_single
-R62
+R61
 R4
 R6
 !i10b 1
@@ -2186,7 +2186,7 @@ R6
 I`X>`VXX]hHH6`ePYP@E0;0
 S1
 R1
-R33
+R34
 8./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_round_single.v
 F./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_round_single.v
 !i122 5
@@ -2196,15 +2196,15 @@ R9
 r1
 !s85 0
 31
-R10
+R29
+R62
 R63
-R64
 !i113 0
 R13
-R65
+R64
 R2
 vpa_fdsu_special
-R62
+R61
 R4
 R6
 !i10b 1
@@ -2212,7 +2212,7 @@ R6
 I[@6=h3Pl8l?8k`gkRJI:`2
 S1
 R1
-R33
+R34
 8./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_special.v
 F./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_special.v
 !i122 5
@@ -2222,15 +2222,15 @@ R9
 r1
 !s85 0
 31
-R10
+R29
+R62
 R63
-R64
 !i113 0
 R13
-R65
+R64
 R2
 vpa_fdsu_srt_single
-R62
+R61
 R4
 R6
 !i10b 1
@@ -2238,7 +2238,7 @@ R6
 I=0<QT3J6=D>>jZ:F4iFDY1
 S1
 R1
-R33
+R34
 8./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_srt_single.v
 F./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_srt_single.v
 !i122 5
@@ -2248,15 +2248,15 @@ R9
 r1
 !s85 0
 31
-R10
+R29
+R62
 R63
-R64
 !i113 0
 R13
-R65
+R64
 R2
 vpa_fdsu_top
-R62
+R61
 R4
 R6
 !i10b 1
@@ -2264,7 +2264,7 @@ R6
 I;Cm=Gk8O=dPiC<94QS4bd2
 S1
 R1
-R33
+R34
 8./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_top.v
 F./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl/pa_fdsu_top.v
 !i122 5
@@ -2274,12 +2274,12 @@ R9
 r1
 !s85 0
 31
-R10
+R29
+R62
 R63
-R64
 !i113 0
 R13
-R65
+R64
 R2
 vplru_tree
 R3
@@ -2349,18 +2349,18 @@ Ieb>S2HJf<lN[c^95:a^[O2
 S1
 R1
 R26
-Z66 8./src/fpu_div_sqrt_mvp/hdl/preprocess_mvp.sv
-Z67 F./src/fpu_div_sqrt_mvp/hdl/preprocess_mvp.sv
+Z65 8./src/fpu_div_sqrt_mvp/hdl/preprocess_mvp.sv
+Z66 F./src/fpu_div_sqrt_mvp/hdl/preprocess_mvp.sv
 !i122 4
 L0 37 389
 R9
 31
-R10
 R29
 R30
+R31
 !i113 0
 R13
-R31
+R32
 R2
 Xpreprocess_mvp_sv_unit
 R24
@@ -2377,18 +2377,18 @@ InkG07LNfj8zSc;jG7ZA^70
 S1
 R1
 R26
+R65
 R66
-R67
 !i122 4
-R43
+R44
 R9
 31
-R10
 R29
 R30
+R31
 !i113 0
 R13
-R31
+R32
 R2
 vrr_arb_tree
 R3
@@ -2521,17 +2521,17 @@ R13
 R14
 R2
 vshifter
-R45
-R4
 R46
+R4
+R6
 !i10b 1
 !s100 7<FfXaSnbYdG@K;Z^G]lE1
-I^HfbJ8?OfEJ?L18ombna33
+I>E=FSD`d@E2Ei1[^^V9_31
 S1
 R1
 R47
-8./src/shifter.sv
-F./src/shifter.sv
+8./src/hub_modules/adder/shifter.sv
+F./src/hub_modules/adder/shifter.sv
 !i122 8
 L0 21 42
 R8
@@ -2539,24 +2539,24 @@ R9
 r1
 !s85 0
 31
-R10
+R29
 R48
 R49
 !i113 0
 R13
 R2
 vspecial_cases_detector
-R45
-R4
 R46
+R4
+R6
 !i10b 1
 !s100 iEg>j9BdYERLlBWPLg5XY0
-I?dKL4m2i4PWVW;0D=Eli@0
+IJSSW``mYfNaIZW98CQIAb3
 S1
 R1
 R47
-8./src/special_cases_detector.sv
-F./src/special_cases_detector.sv
+8./src/hub_modules/adder/special_cases_detector.sv
+F./src/hub_modules/adder/special_cases_detector.sv
 !i122 8
 L0 17 111
 R8
@@ -2564,24 +2564,24 @@ R9
 r1
 !s85 0
 31
-R10
+R29
 R48
 R49
 !i113 0
 R13
 R2
 vspecial_result_for_adder
-R45
-R4
 R46
+R4
+R6
 !i10b 1
 !s100 nB515GcYe9>db[;nMK0Pb0
-IXZCNCTc8W5GoZYfQzKjXC2
+IniN;6B6n_ZFYnfAB31_1C3
 S1
 R1
 R47
-8./src/special_result_for_adder.sv
-F./src/special_result_for_adder.sv
+8./src/hub_modules/adder/special_result_for_adder.sv
+F./src/hub_modules/adder/special_result_for_adder.sv
 !i122 8
 L0 19 130
 R8
@@ -2589,7 +2589,7 @@ R9
 r1
 !s85 0
 31
-R10
+R29
 R48
 R49
 !i113 0
@@ -2634,7 +2634,7 @@ R15
 8./src/common_cells/src/stream_arbiter.sv
 F./src/common_cells/src/stream_arbiter.sv
 !i122 3
-R57
+R56
 R8
 R9
 r1
@@ -2738,7 +2738,7 @@ R7
 8./src/common_cells/src/stream_intf.sv
 F./src/common_cells/src/stream_intf.sv
 !i122 3
-R56
+R55
 R8
 R9
 r1
@@ -3092,11 +3092,11 @@ R13
 R14
 R2
 vtb_fpnew_simple
-Z68 2./src/tb_fpnew_simple.sv
+Z67 2./src/tb_fpnew_simple.sv
 R4
 R51
 DXx4 work 23 tb_fpnew_simple_sv_unit 0 22 [8NAgU;4b`ZD@Zm3hn73d3
-R46
+Z68 !s110 1758099617
 R8
 r1
 !s85 0
@@ -3106,25 +3106,82 @@ IREUhfbFDAVFD2;6KMPhRh2
 !s105 tb_fpnew_simple_sv_unit
 S1
 R1
-Z69 w1758097569
+Z69 w1758099372
 Z70 8./src/tb_fpnew_simple.sv
 Z71 F./src/tb_fpnew_simple.sv
 !i122 10
 L0 4 164
 R9
 31
-R52
+R29
 Z72 !s107 ./src/tb_fpnew_simple.sv|
 Z73 !s90 -sv|-work|work|+incdir+./src/common_cells/include|+incdir+./src/fpu_div_sqrt_mvp/hdl|+incdir+./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl|+incdir+./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl|./src/tb_fpnew_simple.sv|
 !i113 0
 R13
-R55
+R54
 R2
-Xtb_fpnew_simple_sv_unit
-R68
+vtb_fpnew_simple_2
+Z74 2./src/tb_fpnew_simple_2.sv
 R4
 R51
-R46
+DXx4 work 25 tb_fpnew_simple_2_sv_unit 0 22 8c2TVL0nROPH8c]JdHNl;0
+R68
+R8
+r1
+!s85 0
+!i10b 1
+!s100 MmBA1`WLIP;?2PZ?SzDhe2
+IR6coInDZ9>nfn6hYiNU4[1
+!s105 tb_fpnew_simple_2_sv_unit
+S1
+R1
+Z75 w1757580069
+Z76 8./src/tb_fpnew_simple_2.sv
+Z77 F./src/tb_fpnew_simple_2.sv
+!i122 11
+L0 4 156
+R9
+31
+Z78 !s108 1758099617.000000
+Z79 !s107 ./src/tb_fpnew_simple_2.sv|
+Z80 !s90 -sv|-work|work|+incdir+./src/common_cells/include|+incdir+./src/fpu_div_sqrt_mvp/hdl|+incdir+./vendor/opene906/E906_RTL_FACTORY/gen_rtl/fdsu/rtl|+incdir+./vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl|./src/tb_fpnew_simple_2.sv|
+!i113 0
+R13
+R54
+R2
+Xtb_fpnew_simple_2_sv_unit
+R74
+R4
+R51
+R68
+V8c2TVL0nROPH8c]JdHNl;0
+r1
+!s85 0
+!i10b 1
+!s100 HK[JGlGI4QK?gh_@Ymj`D1
+I8c2TVL0nROPH8c]JdHNl;0
+!i103 1
+S1
+R1
+R75
+R76
+R77
+!i122 11
+Z81 L0 2 0
+R9
+31
+R78
+R79
+R80
+!i113 0
+R13
+R54
+R2
+Xtb_fpnew_simple_sv_unit
+R67
+R4
+R51
+R68
 V[8NAgU;4b`ZD@Zm3hn73d3
 r1
 !s85 0
@@ -3138,15 +3195,15 @@ R69
 R70
 R71
 !i122 10
-L0 2 0
+R81
 R9
 31
-R52
+R29
 R72
 R73
 !i113 0
 R13
-R55
+R54
 R2
 vunread
 R3
