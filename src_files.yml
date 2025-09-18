@@ -49,5 +49,8 @@ fpnew:
     src/hub_modules/adder/LZD.sv,
     src/hub_modules/adder/shifter.sv,
     src/hub_modules/adder/special_cases_detector.sv,
-    src/hub_modules/adder/special_result_for_adder.sv
+    src/hub_modules/adder/special_result_for_adder.sv,
+    src/hub_modules/multiplier/FPHUB_mult.sv,
+    src/hub_modules/multiplier/special_cases_detector.sv,
+    src/hub_modules/multiplier/special_result_for_multiplier.sv
   ]
