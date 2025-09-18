@@ -10,3 +10,6 @@
 [submodule "src/hub_modules/adder"]
 	path = src/hub_modules/adder
 	url = https://github.com/HUBformat/FPHUB_adder.git
+[submodule "src/hub_modules/multiplier"]
+	path = src/hub_modules/multiplier
+	url = https://github.com/HUBformat/FPHUB_mult.git
