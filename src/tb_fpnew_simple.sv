@@ -162,8 +162,8 @@ module tb_fpnew_simple;
     assert(result_o == 16'h3C00) else $error("Falla la resta random");
 
     // Suma: 1.0 + 1.0 = 2.0
-    send_op(16'h4000, 16'h4000, fpnew_pkg::ADD, 1'b1, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
-    assert(result_o == 16'h3C00) else $error("Falla en la resta 3.0 - 2.0");
+    send_op(16'h4000, 16'hA58F, fpnew_pkg::MUL, 1'b1, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
+    assert(result_o == 16'h3C00) else $error("Fallo en la multiplicacion 1.0·X");
 
     $finish;
   end
