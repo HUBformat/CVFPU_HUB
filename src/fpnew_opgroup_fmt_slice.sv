@@ -93,11 +93,11 @@ module fpnew_opgroup_fmt_slice #(
 
     // Generate instances only if needed, lane 0 always generated
     if ((lane == 0) || EnableVectors) begin : active_lane
-      logic in_valid, out_valid, out_ready; // lane-local handshake
+      logic in_valid, out_valid, out_valid_adder, out_valid_mult, out_ready; // lane-local handshake
 
       logic [NUM_OPERANDS-1:0][FP_WIDTH-1:0] local_operands; // lane-local operands
-      logic [FP_WIDTH-1:0]                   op_result;      // lane-local results
-      fpnew_pkg::status_t                    op_status;
+      logic [FP_WIDTH-1:0]                   op_result, add_result, mult_result;      // lane-local results
+      fpnew_pkg::status_t                    op_status, add_status, mult_status;
 
       assign in_valid = in_valid_i & ((lane == 0) | vectorial_op); // upper lanes only for vectors
       // Slice out the operands for this lane
@@ -120,11 +120,30 @@ module fpnew_opgroup_fmt_slice #(
           .in_valid_i ( in_valid ),
           .in_ready_o ( lane_in_ready[lane] ),
           .flush_i,
-          .result_o   ( op_result ),
-          .status_o   ( op_status ),
+          .result_o   ( add_result ),
+          .status_o   ( add_status ),
           .out_valid_o( out_valid ),
           .out_ready_i( out_ready )
         );
+        
+        fpnew_hub_multiplier_wrapper #(
+          .FpFormat    ( FpFormat    )
+        ) i_hub_multiplier_wrapper (
+          .clk_i,
+          .rst_ni,
+          .operands_i( local_operands ),
+          .op_i,
+          .op_mod_i,
+          .in_valid_i ( in_valid ),
+          .in_ready_o ( lane_in_ready[lane] ),
+          .flush_i,
+          .result_o   ( mult_result ),
+          .status_o   ( mult_status ),
+          .out_valid_o( out_valid ),
+          .out_ready_i( out_ready )
+        );
+
+
         // fpnew_fma #(
         //   .FpFormat    ( FpFormat    ),
         //   .NumPipeRegs ( NumPipeRegs ),
@@ -224,6 +243,29 @@ module fpnew_opgroup_fmt_slice #(
           .reg_ena_i
         );
       end // ADD OTHER OPTIONS HERE
+
+      // MUX: Usar un case statement para seleccionar el resultado y los flags correctos
+      always_comb begin
+        case(op_i)
+          fpnew_pkg::ADD: begin
+            op_result = add_result;
+            op_status = add_status;
+            // Para la lógica combinacional, se puede dejar a 0 o se podría derivar
+            // de la lógica de in_valid y out_valid.
+            lane_busy[lane] = 1'b0;
+          end
+          fpnew_pkg::MUL: begin
+            op_result = mult_result;
+            op_status = mult_status;
+            lane_busy[lane] = 1'b0;
+          end
+          default: begin
+            op_result = {Width{1'bx}};
+            op_status = 1'bx;
+            lane_busy[lane] = 1'b0;
+          end
+        endcase
+      end
 
       // Handshakes are only done if the lane is actually used
       assign out_ready            = out_ready_i & ((lane == 0) | result_is_vector);
