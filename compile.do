@@ -75,5 +75,4 @@ vlog -sv -work work +incdir+$COMMON_CELLS_INC +incdir+$FPU_DIV_SQRT_INC +incdir+
 # Compilar el testbench 1
 vlog -sv -work work +incdir+$COMMON_CELLS_INC +incdir+$FPU_DIV_SQRT_INC +incdir+$VENDOR_INC +incdir+$VENDOR_INC2 ./src/tb_fpnew_simple.sv
 
-# Compilar el testbench 2
-vlog -sv -work work +incdir+$COMMON_CELLS_INC +incdir+$FPU_DIV_SQRT_INC +incdir+$VENDOR_INC +incdir+$VENDOR_INC2 ./src/tb_fpnew_simple_2.sv
+exit
