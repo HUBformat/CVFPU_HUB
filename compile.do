@@ -49,6 +49,12 @@ vlog -sv -work work \
   ./src/hub_modules/adder/FPHUB_adder.sv \
   ./src/hub_modules/adder/fpnew_hub_adder_wrapper.sv
 
+# Compilar módulos del multiplicador
+vlog -sv -work work \
+  ./src/hub_modules/multiplier/special_result_for_multiplier.sv \
+  ./src/hub_modules/multiplier/FPHUB_mult.sv \
+  ./src/hub_modules/multiplier/fpnew_hub_multiplier_wrapper.sv \
+
 # Compilar los módulos de la FPU que dependen de los paquetes
 vlog -sv -work work +incdir+$COMMON_CELLS_INC +incdir+$FPU_DIV_SQRT_INC +incdir+$VENDOR_INC +incdir+$VENDOR_INC2 \
   ./src/fpnew_cast_multi.sv \

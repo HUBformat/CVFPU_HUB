@@ -96,8 +96,8 @@ module fpnew_opgroup_fmt_slice #(
       logic in_valid, out_valid, out_valid_adder, out_valid_mult, out_ready; // lane-local handshake
 
       logic [NUM_OPERANDS-1:0][FP_WIDTH-1:0] local_operands; // lane-local operands
-      logic [FP_WIDTH-1:0]                   op_result, add_result, mult_result;      // lane-local results
-      fpnew_pkg::status_t                    op_status, add_status, mult_status;
+      logic [FP_WIDTH-1:0]                   op_result;      // lane-local results
+      fpnew_pkg::status_t                    op_status;
 
       assign in_valid = in_valid_i & ((lane == 0) | vectorial_op); // upper lanes only for vectors
       // Slice out the operands for this lane
@@ -109,105 +109,76 @@ module fpnew_opgroup_fmt_slice #(
 
       // Instantiate the operation from the selected opgroup
       if (OpGroup == fpnew_pkg::ADDMUL) begin : lane_instance
+        
+        logic [FP_WIDTH-1:0]  add_result, mult_result;      // lane-local results
+        fpnew_pkg::status_t   add_status, mult_status;
+        logic                 adder_in_ready, mult_in_ready;
+        logic                 adder_out_valid, mult_out_valid;
+
         fpnew_hub_adder_wrapper #(
-          .FpFormat    ( FpFormat    )
+          .FpFormat(FpFormat)
         ) i_hub_adder_wrapper (
           .clk_i,
           .rst_ni,
-          .operands_i( local_operands ),
+          .operands_i(local_operands),
           .op_i,
           .op_mod_i,
-          .in_valid_i ( in_valid ),
-          .in_ready_o ( lane_in_ready[lane] ),
+          .in_valid_i(in_valid),
+          .in_ready_o(adder_in_ready),
           .flush_i,
-          .result_o   ( add_result ),
-          .status_o   ( add_status ),
-          .out_valid_o( out_valid ),
-          .out_ready_i( out_ready )
+          .result_o(add_result),
+          .status_o(add_status),
+          .out_valid_o(adder_out_valid),
+          .out_ready_i(out_ready)
         );
         
         fpnew_hub_multiplier_wrapper #(
-          .FpFormat    ( FpFormat    )
+          .FpFormat(FpFormat)
         ) i_hub_multiplier_wrapper (
           .clk_i,
           .rst_ni,
-          .operands_i( local_operands ),
+          .operands_i(local_operands),
           .op_i,
           .op_mod_i,
-          .in_valid_i ( in_valid ),
-          .in_ready_o ( lane_in_ready[lane] ),
+          .in_valid_i(in_valid),
+          .in_ready_o(mult_in_ready),
           .flush_i,
-          .result_o   ( mult_result ),
-          .status_o   ( mult_status ),
-          .out_valid_o( out_valid ),
-          .out_ready_i( out_ready )
+          .result_o(mult_result),
+          .status_o(mult_status),
+          .out_valid_o(mult_out_valid),
+          .out_ready_i(out_ready)
         );
 
-
-        // fpnew_fma #(
-        //   .FpFormat    ( FpFormat    ),
-        //   .NumPipeRegs ( NumPipeRegs ),
-        //   .PipeConfig  ( PipeConfig  ),
-        //   .TagType     ( TagType     ),
-        //   .AuxType     ( logic       )
-        // ) i_fma (
-        //   .clk_i,
-        //   .rst_ni,
-        //   .operands_i      ( local_operands               ),
-        //   .is_boxed_i      ( is_boxed_i[NUM_OPERANDS-1:0] ),
-        //   .rnd_mode_i,
-        //   .op_i,
-        //   .op_mod_i,
-        //   .tag_i,
-        //   .mask_i          ( simd_mask_i[lane]    ),
-        //   .aux_i           ( vectorial_op         ), // Remember whether operation was vectorial
-        //   .in_valid_i      ( in_valid             ),
-        //   .in_ready_o      ( lane_in_ready[lane]  ),
-        //   .flush_i,
-        //   .result_o        ( op_result            ),
-        //   .status_o        ( op_status            ),
-        //   .extension_bit_o ( lane_ext_bit[lane]   ),
-        //   .tag_o           ( lane_tags[lane]      ),
-        //   .mask_o          ( lane_masks[lane]     ),
-        //   .aux_o           ( lane_vectorial[lane] ),
-        //   .out_valid_o     ( out_valid            ),
-        //   .out_ready_i     ( out_ready            ),
-        //   .busy_o          ( lane_busy[lane]      ),
-        //   .reg_ena_i
-        // );
+        // MUX para seleccionar la señal in_ready y las salidas del módulo correcto.
+        always_comb begin
+          case(op_i)
+            fpnew_pkg::ADD: begin
+              op_result = add_result;
+              op_status = add_status;
+              out_valid = adder_out_valid;
+              lane_in_ready[lane] = adder_in_ready;
+              lane_busy[lane] = 1'b0;
+            end
+            fpnew_pkg::MUL: begin
+              op_result = mult_result;
+              op_status = mult_status;
+              out_valid = mult_out_valid;
+              lane_in_ready[lane] = mult_in_ready;
+              lane_busy[lane] = 1'b0;
+            end
+            default: begin
+              op_result = '{default: 1'bx};
+              op_status = '{default: 1'bx};
+              out_valid = 1'b0;
+              lane_in_ready[lane] = 1'b0;
+              lane_busy[lane] = 1'b0;
+            end
+          endcase
+        end
         assign lane_is_class[lane]   = 1'b0;
         assign lane_class_mask[lane] = fpnew_pkg::NEGINF;
       end else if (OpGroup == fpnew_pkg::DIVSQRT) begin : lane_instance
-        // fpnew_divsqrt #(
-        //   .FpFormat   (FpFormat),
-        //   .NumPipeRegs(NumPipeRegs),
-        //   .PipeConfig (PipeConfig),
-        //   .TagType    (TagType),
-        //   .AuxType    (logic)
-        // ) i_divsqrt (
-        //   .clk_i,
-        //   .rst_ni,
-        //   .operands_i      ( local_operands               ),
-        //   .is_boxed_i      ( is_boxed_i[NUM_OPERANDS-1:0] ),
-        //   .rnd_mode_i,
-        //   .op_i,
-        //   .op_mod_i,
-        //   .tag_i,
-        //   .aux_i           ( vectorial_op         ), // Remember whether operation was vectorial
-        //   .in_valid_i      ( in_valid             ),
-        //   .in_ready_o      ( lane_in_ready[lane]  ),
-        //   .flush_i,
-        //   .result_o        ( op_result            ),
-        //   .status_o        ( op_status            ),
-        //   .extension_bit_o ( lane_ext_bit[lane]   ),
-        //   .tag_o           ( lane_tags[lane]      ),
-        //   .aux_o           ( lane_vectorial[lane] ),
-        //   .out_valid_o     ( out_valid            ),
-        //   .out_ready_i     ( out_ready            ),
-        //   .busy_o          ( lane_busy[lane]      ),
-        //   .reg_ena_i
-        // );
-        // assign lane_is_class[lane] = 1'b0;
+        
       end else if (OpGroup == fpnew_pkg::NONCOMP) begin : lane_instance
         fpnew_noncomp #(
           .FpFormat   (FpFormat),
@@ -243,29 +214,6 @@ module fpnew_opgroup_fmt_slice #(
           .reg_ena_i
         );
       end // ADD OTHER OPTIONS HERE
-
-      // MUX: Usar un case statement para seleccionar el resultado y los flags correctos
-      always_comb begin
-        case(op_i)
-          fpnew_pkg::ADD: begin
-            op_result = add_result;
-            op_status = add_status;
-            // Para la lógica combinacional, se puede dejar a 0 o se podría derivar
-            // de la lógica de in_valid y out_valid.
-            lane_busy[lane] = 1'b0;
-          end
-          fpnew_pkg::MUL: begin
-            op_result = mult_result;
-            op_status = mult_status;
-            lane_busy[lane] = 1'b0;
-          end
-          default: begin
-            op_result = {Width{1'bx}};
-            op_status = 1'bx;
-            lane_busy[lane] = 1'b0;
-          end
-        endcase
-      end
 
       // Handshakes are only done if the lane is actually used
       assign out_ready            = out_ready_i & ((lane == 0) | result_is_vector);
