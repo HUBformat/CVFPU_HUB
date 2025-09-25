@@ -52,5 +52,8 @@ fpnew:
     src/hub_modules/adder/special_result_for_adder.sv,
     src/hub_modules/multiplier/FPHUB_mult.sv,
     src/hub_modules/multiplier/special_cases_detector.sv,
-    src/hub_modules/multiplier/special_result_for_multiplier.sv
+    src/hub_modules/multiplier/special_result_for_multiplier.sv,
+    src/hub_modules/divider/FPHUB_divider.sv,
+    src/hub_modules/divider/special_cases_detector_div.sv,
+    src/hub_modules/divider/special_result_for_divider.sv
   ]

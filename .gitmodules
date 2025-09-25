@@ -13,3 +13,6 @@
 [submodule "src/hub_modules/multiplier"]
 	path = src/hub_modules/multiplier
 	url = https://github.com/HUBformat/FPHUB_mult.git
+[submodule "src/hub_modules/divider"]
+	path = src/hub_modules/divider
+	url = https://github.com/HUBformat/FPHUB_divider.git
