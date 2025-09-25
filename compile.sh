@@ -36,3 +36,6 @@ else
   echo "--------------------------------------------------------"
   exit 0
 fi
+
+# Ejecutar simulación
+vsim -voptargs=+acc work.tb_fpnew_simple -do "do wave.do; run"

@@ -79,13 +79,13 @@ module tb_fpnew_simple;
   // Secuencia de reset
   initial begin
     rst_ni = 1'b0;
-    flush_i = 1'b0;
-    #10;
+    flush_i = 1'b1;
+    #5;
     rst_ni = 1'b1; // Liberar el reset asíncrono
-    #10;
-    flush_i = 1'b1; // Activar el reset síncrono para limpiar el pipeline
-    #10;
-    flush_i = 1'b0; // Liberar el reset síncrono
+    //#10;
+    flush_i = 1'b0; // Activar el reset síncrono para limpiar el pipeline
+    //#10;
+    //flush_i = 1'b0; // Liberar el reset síncrono
   end
 
   // Tarea para enviar una operación a la FPU
@@ -115,17 +115,15 @@ module tb_fpnew_simple;
       simd_mask_i = '1;
 
       // Iniciar el handshake de entrada. El testbench está listo para enviar.
+      // SUPRIMIDO
       in_valid_i = 1'b1;
       out_ready_i = 1'b1; // El testbench también está listo para recibir el resultado.
 
       // Esperar a que la FPU esté lista
-      @(posedge clk);
-      while (!in_ready_o) begin
-        @(posedge clk);
-      end
-      
-      // La transacción de entrada se ha completado. Desactivar 'in_valid_i'.
-      //in_valid_i = 1'b0;
+      //@(posedge clk);
+      //while (!in_ready_o) begin
+      //  @(posedge clk);
+      //end
 
       // Esperar a que el resultado esté disponible
       @(posedge clk);
@@ -133,8 +131,11 @@ module tb_fpnew_simple;
         @(posedge clk);
       end
       
+      // La transacción de entrada se ha completado. Desactivar 'in_valid_i'.
+      in_valid_i = 1'b0;
+      
       // La transacción de salida se ha completado.
-      $display("Operación: %0d, Operandos: %h, %h, Resultado: %h, Estatus: %b", op_i, operands_i[0], operands_i[1], result_o, status_o);
+      //$display("Operación: %0d, Operandos: %h, %h, Resultado: %h, Estatus: %b", op_i, operands_i[0], operands_i[1], result_o, status_o);
     end
   endtask
   
@@ -149,6 +150,10 @@ module tb_fpnew_simple;
     RNE_MODE = fpnew_pkg::RNE;
     
     wait(rst_ni == 1'b1 && flush_i == 1'b0);
+
+    //// NUEVA LINEA
+    //in_valid_i = 1'b1;
+    //out_ready_i = 1'b1;
     
     // Casos de prueba de suma y resta de 16 bits (ejemplos IEEE 754)
     // Suma: -inf + inf = inf
@@ -158,11 +163,15 @@ module tb_fpnew_simple;
 
     // Resta random
     // (0x4200 - 0x4000 = 0x3C00)
-    send_op(16'h4070, 16'h4201, fpnew_pkg::ADD, 1'b1, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
+    send_op(16'h4070, 16'h4201, fpnew_pkg::ADD, 1'b0, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
     assert(result_o == 16'h3C00) else $error("Falla la resta random");
 
     // Suma: 1.0 + 1.0 = 2.0
-    send_op(16'h4000, 16'hA58F, fpnew_pkg::MUL, 1'b1, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
+    send_op(16'h4000, 16'hA58F, fpnew_pkg::MUL, 1'b0, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
+    assert(result_o == 16'h3C00) else $error("Fallo en la multiplicacion 1.0·X");
+
+    // Suma: 1.0 + 1.0 = 2.0
+    send_op(16'h4400, 16'h4800, fpnew_pkg::MUL, 1'b0, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
     assert(result_o == 16'h3C00) else $error("Fallo en la multiplicacion 1.0·X");
 
     $finish;
