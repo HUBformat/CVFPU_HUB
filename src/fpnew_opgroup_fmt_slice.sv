@@ -198,7 +198,8 @@ module fpnew_opgroup_fmt_slice #(
           .result_o(div_result),
           .status_o(div_status),
           .out_valid_o(div_out_valid),
-          .out_ready_i(out_ready)
+          .out_ready_i(out_ready),
+          .busy_o(lane_busy[lane])
         );
 
         // MUX para seleccionar las señales del módulo de DIV
