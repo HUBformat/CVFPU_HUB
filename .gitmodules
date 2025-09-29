@@ -16,3 +16,6 @@
 [submodule "src/hub_modules/divider"]
 	path = src/hub_modules/divider
 	url = https://github.com/HUBformat/FPHUB_divider.git
+[submodule "src/hub_modules/sqrt"]
+	path = src/hub_modules/sqrt
+	url = https://github.com/HUBformat/FPHUB_sqrt.git
