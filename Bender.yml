@@ -10,6 +10,7 @@ dependencies:
   fpu_div_sqrt_mvp: {git: "https://github.com/pulp-platform/fpu_div_sqrt_mvp.git", version: 1.0.4}
   FPHUB_adder: {git: "https://github.com/HUBformat/FPHUB_adder.git",               version: 1.0.0}
   FPHUB_mult: {git: "https://github.com/HUBformat/FPHUB_mult.git",                 version: 1.0.0}
+  FPHUB_divider: {git: "https://github.com/HUBformat/FPHUB_divider.git",           rev: 9fb7597}
 
 sources:
   - src/fpnew_pkg.sv
@@ -59,3 +60,6 @@ sources:
   - src/hub_modules/multiplier/FPHUB_mult.sv
   - src/hub_modules/multiplier/special_cases_detector.sv
   - src/hub_modules/multiplier/special_result_for_multiplier.sv
+  - src/hub_modules/divider/FPHUB_divider.sv
+  - src/hub_modules/divider/special_cases_detector_div.sv
+  - src/hub_modules/divider/special_result_for_divider.sv

@@ -4,7 +4,7 @@ import fpnew_pkg::*;
 module tb_fpnew_simple;
 
   // Parámetros del testbench
-  parameter FP_WIDTH = 16;
+  parameter FP_WIDTH = 32;
   parameter NUM_OPERANDS = 3;
 
   // Señales de la interfaz de la FPU
@@ -37,7 +37,7 @@ module tb_fpnew_simple;
     Width:         FP_WIDTH,
     EnableVectors: 1'b0,
     EnableNanBox:  1'b1,
-    FpFmtMask:     {1'b0, 1'b0, 1'b1, 1'b0, 1'b0}, // Solo habilita el formato FP16
+    FpFmtMask:     {1'b1, 1'b0, 1'b0, 1'b0, 1'b0}, // Solo habilita el formato FP16
     IntFmtMask:    {fpnew_pkg::INT64, fpnew_pkg::INT32, fpnew_pkg::INT16, fpnew_pkg::INT8}
   };
 
@@ -102,9 +102,15 @@ module tb_fpnew_simple;
     begin
       // Poner los datos en los puertos de entrada.
       // Los datos deben ser estables antes de activar 'in_valid_i'.
-      operands_i[1] = operand1;
-      operands_i[2] = operand2;
       op_i = operation;
+      if (op_i == fpnew_pkg::DIV) begin
+        operands_i[0] = operand1;
+        operands_i[1] = operand2;
+      end else begin
+        operands_i[1] = operand1;
+        operands_i[2] = operand2;
+      end
+      
       op_mod_i = operation_mod;
       rnd_mode_i = round_mode;
       src_fmt_i = src_format;
@@ -142,11 +148,11 @@ module tb_fpnew_simple;
   // Secuencia de prueba
   initial begin
     // Declara las variables al inicio del bloque
-    fpnew_pkg::fp_format_e FP16_FORMAT;
+    fpnew_pkg::fp_format_e FP32_FORMAT;
     fpnew_pkg::roundmode_e RNE_MODE;
 
     // Ahora asigna los valores
-    FP16_FORMAT = fpnew_pkg::FP16;
+    FP32_FORMAT = fpnew_pkg::FP32;
     RNE_MODE = fpnew_pkg::RNE;
     
     wait(rst_ni == 1'b1 && flush_i == 1'b0);
@@ -158,23 +164,31 @@ module tb_fpnew_simple;
     // Casos de prueba de suma y resta de 16 bits (ejemplos IEEE 754)
     // Suma: -inf + inf = inf
     // (0x3C00 + 0x3C00 = 0x4000)
-    send_op(16'hFFFF, 16'h7FFF, fpnew_pkg::ADD, 1'b0, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
-    assert(result_o == 16'h7FFF) else $error("Falla en -inf + inf");
+    send_op(32'hFFFFFFFF, 32'h7FFFFFFF, fpnew_pkg::ADD, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
+    assert(result_o == 32'h7FFFFFFF) else $error("Falla en -inf + inf");
 
     // Resta random
     // (0x4200 - 0x4000 = 0x3C00)
-    send_op(16'h4070, 16'h4201, fpnew_pkg::ADD, 1'b0, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
-    assert(result_o == 16'h3C00) else $error("Falla la resta random");
+    send_op(32'h40A147AE, 32'h41800000, fpnew_pkg::ADD, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
+    assert(result_o == 32'h3C000000) else $error("Falla la resta random");
 
     // Suma: 1.0 + 1.0 = 2.0
-    send_op(16'h4000, 16'hA58F, fpnew_pkg::MUL, 1'b0, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
-    assert(result_o == 16'h3C00) else $error("Fallo en la multiplicacion 1.0·X");
+    send_op(32'h40000000, 32'hA58F3210, fpnew_pkg::MUL, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
+    assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
 
     // Suma: 1.0 + 1.0 = 2.0
-    send_op(16'h4400, 16'h4800, fpnew_pkg::MUL, 1'b0, RNE_MODE, FP16_FORMAT, FP16_FORMAT, fpnew_pkg::INT8);
-    assert(result_o == 16'h3C00) else $error("Fallo en la multiplicacion 1.0·X");
+    send_op(32'h41900000, 32'h40C00000, fpnew_pkg::MUL, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
+    assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
 
-    $finish;
+    // Division: 4.0 / 2.0 = 2.0
+    send_op(32'h00000000, 32'h00000000, fpnew_pkg::DIV, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
+    assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
+
+    // Division: 0 / 0 = inf
+    send_op(32'h41900000, 32'h40C00000, fpnew_pkg::DIV, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
+    assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
+
+    //$finish;
   end
   
 endmodule

@@ -71,6 +71,13 @@ vlog -sv -work work +incdir+$COMMON_CELLS_INC +incdir+$FPU_DIV_SQRT_INC +incdir+
   ./src/fpnew_rounding.sv \
   ./src/fpnew_top.sv
 
+# Compilar módulos del divisor
+vlog -sv -work work \
+  ./src/hub_modules/divider/special_cases_detector_div.sv \
+  ./src/hub_modules/divider/special_result_for_divider.sv \
+  ./src/hub_modules/divider/FPHUB_divider.sv \
+  ./src/hub_modules/divider/fpnew_hub_divider_wrapper.sv
+
 
 # Compilar el testbench 1
 vlog -sv -work work +incdir+$COMMON_CELLS_INC +incdir+$FPU_DIV_SQRT_INC +incdir+$VENDOR_INC +incdir+$VENDOR_INC2 ./src/tb_fpnew_simple.sv

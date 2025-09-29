@@ -178,6 +178,59 @@ module fpnew_opgroup_fmt_slice #(
         assign lane_is_class[lane]   = 1'b0;
         assign lane_class_mask[lane] = fpnew_pkg::NEGINF;
       end else if (OpGroup == fpnew_pkg::DIVSQRT) begin : lane_instance
+        logic [FP_WIDTH-1:0]  div_result;
+        fpnew_pkg::status_t   div_status;
+        logic                 div_in_ready;
+        logic                 div_out_valid;
+
+        // Instancia del divisor en formato HUB
+        fpnew_hub_divider_wrapper #(
+          .FpFormat(FpFormat)
+        ) i_hub_divider_wrapper (
+          .clk_i,
+          .rst_ni,
+          .operands_i(local_operands), 
+          .op_i,
+          .op_mod_i,
+          .in_valid_i(in_valid),
+          .in_ready_o(div_in_ready),
+          .flush_i,
+          .result_o(div_result),
+          .status_o(div_status),
+          .out_valid_o(div_out_valid),
+          .out_ready_i(out_ready),
+          .busy_o(lane_busy[lane])
+        );
+
+        // MUX para seleccionar las señales del módulo de DIV
+        always_comb begin
+          case(op_i)
+            fpnew_pkg::DIV: begin
+              op_result         = div_result;
+              op_status         = div_status;
+              out_valid         = div_out_valid;
+              lane_in_ready[lane] = div_in_ready;
+              lane_busy[lane]   = 1'b0; // El busy está en el wrapper, aquí es 0 si está corriendo la operación.
+            end
+            // Placeholder: si es SQRT, por ahora se marca como no lista y X
+            fpnew_pkg::SQRT: begin 
+              op_result         = '{default: 1'bx};
+              op_status         = '{default: 1'bx};
+              out_valid         = 1'b0;
+              lane_in_ready[lane] = 1'b0;
+              lane_busy[lane]   = 1'b0;
+            end
+            default: begin
+              op_result         = '{default: 1'bx};
+              op_status         = '{default: 1'bx};
+              out_valid         = 1'b0;
+              lane_in_ready[lane] = 1'b0;
+              lane_busy[lane]   = 1'b0;
+            end
+          endcase
+        end
+        assign lane_is_class[lane]   = 1'b0;
+        assign lane_class_mask[lane] = fpnew_pkg::NEGINF;
         
       end else if (OpGroup == fpnew_pkg::NONCOMP) begin : lane_instance
         fpnew_noncomp #(
