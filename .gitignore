@@ -2,11 +2,11 @@
 html
 Bender.lock
 *.log
+*.mpf
+*.wlf
 transcript
 work/
 work/@_opt/_lib.qdb
 work/_info
 work/_lib.qdb
 wave.vcd
-*.mpf
-*.wlf
