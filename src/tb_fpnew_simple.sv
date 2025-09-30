@@ -44,7 +44,7 @@ module tb_fpnew_simple;
   // Instancia de la FPU (Device Under Test)
   fpnew_top #(
     .Features (features_cfg),
-    .Implementation (fpnew_pkg::DEFAULT_NOREGS),
+    .Implementation (fpnew_pkg::DEFAULT_HUB),
     .TagType (logic)
   ) i_fpnew_top (
     .clk_i(clk),
@@ -106,9 +106,15 @@ module tb_fpnew_simple;
       if (op_i == fpnew_pkg::DIV) begin
         operands_i[0] = operand1;
         operands_i[1] = operand2;
-      end else begin
+        operands_i[2] = 'h0000;
+      end else if (op_i == fpnew_pkg::ADD || op_i == fpnew_pkg::MUL) begin
+        operands_i[0] = 'h0000;
         operands_i[1] = operand1;
         operands_i[2] = operand2;
+      end else if (op_i == fpnew_pkg::SQRT) begin
+        operands_i[0] = operand1;
+        operands_i[1] = 'h0000;
+        operands_i[2] = 'h0000;
       end
       
       op_mod_i = operation_mod;
@@ -177,7 +183,7 @@ module tb_fpnew_simple;
     assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
 
     // Suma: 1.0 + 1.0 = 2.0
-    send_op(32'h41900000, 32'h40C00000, fpnew_pkg::MUL, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
+    send_op(32'h41400000, 32'h3F800000, fpnew_pkg::MUL, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
     assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
 
     // Division: 4.0 / 2.0 = 2.0
@@ -186,6 +192,10 @@ module tb_fpnew_simple;
 
     // Division: 0 / 0 = inf
     send_op(32'h41900000, 32'h40C00000, fpnew_pkg::DIV, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
+    assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
+
+    // Division: 0 / 0 = inf
+    send_op(32'h41900000, 32'h10000000, fpnew_pkg::SQRT, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
     assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
 
     //$finish;
