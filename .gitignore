@@ -4,3 +4,6 @@ Bender.lock
 *.log
 transcript
 work/
+work/@_opt/_lib.qdb
+work/_info
+work/_lib.qdb
