@@ -2,4 +2,5 @@
 html
 Bender.lock
 *.log
-work/
+transcript
+./work/*
