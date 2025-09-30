@@ -78,6 +78,11 @@ vlog -sv -work work \
   ./src/hub_modules/divider/FPHUB_divider.sv \
   ./src/hub_modules/divider/fpnew_hub_divider_wrapper.sv
 
+# Compilar módulos de raíz cuadrada
+vlog -sv -work work \
+  ./src/hub_modules/sqrt/FPHUB_sqrt.sv \
+  ./src/hub_modules/sqrt/fpnew_hub_sqrt_wrapper.sv
+
 
 # Compilar el testbench 1
 vlog -sv -work work +incdir+$COMMON_CELLS_INC +incdir+$FPU_DIV_SQRT_INC +incdir+$VENDOR_INC +incdir+$VENDOR_INC2 ./src/tb_fpnew_simple.sv
