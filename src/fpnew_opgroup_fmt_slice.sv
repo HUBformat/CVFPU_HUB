@@ -182,6 +182,7 @@ module fpnew_opgroup_fmt_slice #(
         fpnew_pkg::status_t   div_status, sqrt_status;
         logic                 div_in_ready, sqrt_in_ready;
         logic                 div_out_valid, sqrt_out_valid;
+        logic                 div_busy, sqrt_busy;
 
         // Instancia del divisor en formato HUB
         fpnew_hub_divider_wrapper #(
@@ -199,7 +200,7 @@ module fpnew_opgroup_fmt_slice #(
           .status_o(div_status),
           .out_valid_o(div_out_valid),
           .out_ready_i(out_ready),
-          .busy_o(lane_busy[lane])
+          .busy_o(div_busy)
         );
 
         fpnew_hub_sqrt_wrapper #(
@@ -217,7 +218,7 @@ module fpnew_opgroup_fmt_slice #(
           .status_o(sqrt_status),
           .out_valid_o(sqrt_out_valid),
           .out_ready_i(out_ready),
-          .busy_o(lane_busy[lane])
+          .busy_o(sqrt_busy)
         );
 
         // MUX para seleccionar las señales del módulo de DIV
@@ -228,7 +229,7 @@ module fpnew_opgroup_fmt_slice #(
               op_status         = div_status;
               out_valid         = div_out_valid;
               lane_in_ready[lane] = div_in_ready;
-              lane_busy[lane]   = 1'b0; // El busy está en el wrapper, aquí es 0 si está corriendo la operación.
+              lane_busy[lane]   = div_busy; // El busy está en el wrapper, aquí es 0 si está corriendo la operación.
             end
             // Placeholder: si es SQRT, por ahora se marca como no lista y X
             fpnew_pkg::SQRT: begin 
@@ -236,7 +237,7 @@ module fpnew_opgroup_fmt_slice #(
               op_status         = sqrt_status;
               out_valid         = sqrt_out_valid;
               lane_in_ready[lane] = sqrt_in_ready;
-              lane_busy[lane]   = 1'b0; // El busy está en el wrapper, aquí es 0 si está corriendo la operación.
+              lane_busy[lane]   = sqrt_busy; // El busy está en el wrapper, aquí es 0 si está corriendo la operación.
             end
             default: begin
               op_result         = '{default: 1'bx};
