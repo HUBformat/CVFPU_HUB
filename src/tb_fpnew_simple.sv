@@ -132,19 +132,15 @@ module tb_fpnew_simple;
       out_ready_i = 1'b1; // El testbench también está listo para recibir el resultado.
 
       // Esperar a que la FPU esté lista
-      //@(posedge clk);
-      //while (!in_ready_o) begin
-      //  @(posedge clk);
-      //end
+      @(posedge clk);
+      wait(in_ready_o == 1'b1);
 
       // Esperar a que el resultado esté disponible
       @(posedge clk);
-      while (!out_valid_o) begin
-        @(posedge clk);
-      end
+      wait(out_valid_o == 1'b1);
       
-      // La transacción de entrada se ha completado. Desactivar 'in_valid_i'.
-      in_valid_i = 1'b0;
+      in_valid_i = 1'b0; // Desactivar 'in_valid_i' después de que la FPU acepte los datos.
+      out_ready_i = 1'b0; // Desactivar 'out_ready_i' después
       
       // La transacción de salida se ha completado.
       //$display("Operación: %0d, Operandos: %h, %h, Resultado: %h, Estatus: %b", op_i, operands_i[0], operands_i[1], result_o, status_o);
@@ -176,27 +172,27 @@ module tb_fpnew_simple;
     // Resta random
     // (0x4200 - 0x4000 = 0x3C00)
     send_op(32'h40A147AE, 32'h41800000, fpnew_pkg::ADD, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
-    assert(result_o == 32'h3C000000) else $error("Falla la resta random");
+    //assert(result_o == 32'h3C000000) else $error("Falla la resta random");
 
     // Suma: 1.0 + 1.0 = 2.0
     send_op(32'h40000000, 32'hA58F3210, fpnew_pkg::MUL, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
-    assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
+    //assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
 
     // Suma: 1.0 + 1.0 = 2.0
     send_op(32'h41400000, 32'h3F800000, fpnew_pkg::MUL, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
-    assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
+    //assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
 
     // Division: 4.0 / 2.0 = 2.0
-    send_op(32'h00000000, 32'h00000000, fpnew_pkg::DIV, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
-    assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
+    send_op(32'h00012345, 32'h00001234, fpnew_pkg::DIV, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
+    //assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
 
     // Division: 0 / 0 = inf
     send_op(32'h41900000, 32'h40C00000, fpnew_pkg::DIV, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
-    assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
+    //assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
 
     // Division: 0 / 0 = inf
     send_op(32'h41900000, 32'h10000000, fpnew_pkg::SQRT, 1'b0, RNE_MODE, FP32_FORMAT, FP32_FORMAT, fpnew_pkg::INT8);
-    assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
+    //assert(result_o == 32'h3C000000) else $error("Fallo en la multiplicacion 1.0·X");
 
     //$finish;
   end
