@@ -177,11 +177,15 @@ module fpnew_opgroup_fmt_slice #(
         end
         assign lane_is_class[lane]   = 1'b0;
         assign lane_class_mask[lane] = fpnew_pkg::NEGINF;
+
       end else if (OpGroup == fpnew_pkg::DIVSQRT) begin : lane_instance
-        logic [FP_WIDTH-1:0]  div_result;
-        fpnew_pkg::status_t   div_status;
-        logic                 div_in_ready;
-        logic                 div_out_valid;
+
+        logic [FP_WIDTH-1:0]  div_result, sqrt_result;
+        fpnew_pkg::status_t   div_status, sqrt_status;
+        logic                 div_in_ready_o, sqrt_in_ready_o;
+        logic                 div_start_i, sqrt_start_i;
+        logic                 div_out_valid, sqrt_out_valid;
+        logic                 div_busy_o, sqrt_busy_o, divsqrt_busy;
 
         // Instancia del divisor en formato HUB
         fpnew_hub_divider_wrapper #(
@@ -193,14 +197,43 @@ module fpnew_opgroup_fmt_slice #(
           .op_i,
           .op_mod_i,
           .in_valid_i(in_valid),
-          .in_ready_o(div_in_ready),
+          .in_ready_o(div_in_ready_o),
           .flush_i,
           .result_o(div_result),
           .status_o(div_status),
           .out_valid_o(div_out_valid),
           .out_ready_i(out_ready),
-          .busy_o(lane_busy[lane])
+          .busy_o(div_busy_o)
         );
+
+        fpnew_hub_sqrt_wrapper #(
+          .FpFormat(FpFormat)
+        ) i_hub_sqrt_wrapper(
+          .clk_i(clk_i),
+          .rst_ni(rst_ni),
+          .operands_i(local_operands),
+          .op_i(op_i),
+          .op_mod_i(op_mod_i),
+          .in_valid_i(in_valid),
+          .in_ready_o(sqrt_in_ready_o),
+          .flush_i(flush_i),
+          .result_o(sqrt_result),
+          .status_o(sqrt_status),
+          .out_valid_o(sqrt_out_valid),
+          .out_ready_i(out_ready),
+          .busy_o(sqrt_busy_o)
+        );
+
+        // Se utiliza una señal intermedia para saber si alguna operación del grupo DIVSQRT está en cómputo
+        //assign divsqrt_busy = div_busy_o | sqrt_busy_o;
+
+        // Generación de pulso de inicio de cada operación
+        //assign div_start_i  = in_valid & ~divsqrt_busy && (op_i == fpnew_pkg::DIV);
+        //assign sqrt_start_i = in_valid & ~divsqrt_busy && (op_i == fpnew_pkg::SQRT);
+        
+        assign lane_busy[lane]   = div_busy_o | sqrt_busy_o; // El busy está en el wrapper, aquí es 0 si está corriendo la operación.
+        assign lane_in_ready[lane] = ~lane_busy[lane];
+
 
         // MUX para seleccionar las señales del módulo de DIV
         always_comb begin
@@ -209,23 +242,26 @@ module fpnew_opgroup_fmt_slice #(
               op_result         = div_result;
               op_status         = div_status;
               out_valid         = div_out_valid;
-              lane_in_ready[lane] = div_in_ready;
-              lane_busy[lane]   = 1'b0; // El busy está en el wrapper, aquí es 0 si está corriendo la operación.
+              //lane_in_ready[lane] = in_valid & ~divsqrt_busy;
+              //lane_busy[lane] = divsqrt_busy;
+              //lane_in_ready[lane] = div_in_ready_o;
+              //lane_busy[lane]   = div_busy_o; // El busy está en el wrapper, aquí es 0 si está corriendo la operación.
             end
-            // Placeholder: si es SQRT, por ahora se marca como no lista y X
             fpnew_pkg::SQRT: begin 
-              op_result         = '{default: 1'bx};
-              op_status         = '{default: 1'bx};
-              out_valid         = 1'b0;
-              lane_in_ready[lane] = 1'b0;
-              lane_busy[lane]   = 1'b0;
+              op_result         = sqrt_result;
+              op_status         = sqrt_status;
+              out_valid         = sqrt_out_valid;
+              //lane_in_ready[lane] = in_valid & ~divsqrt_busy;
+              //lane_busy[lane] = divsqrt_busy;
+              //lane_in_ready[lane] = sqrt_in_ready_o;
+              //lane_busy[lane]   = sqrt_busy_o; // El busy está en el wrapper, aquí es 0 si está corriendo la operación.
             end
             default: begin
               op_result         = '{default: 1'bx};
               op_status         = '{default: 1'bx};
               out_valid         = 1'b0;
-              lane_in_ready[lane] = 1'b0;
-              lane_busy[lane]   = 1'b0;
+              //lane_in_ready[lane] = 1'b0;
+              //lane_busy[lane]   = 1'b0;
             end
           endcase
         end

@@ -282,6 +282,15 @@ package fpnew_pkg;
     PipeConfig: BEFORE
   };
 
+  localparam fpu_implementation_t DEFAULT_HUB = '{
+    PipeRegs:   '{default: 0},
+    UnitTypes:  '{'{default: PARALLEL}, // ADDMUL
+                  '{default: PARALLEL}, // DIVSQRT
+                  '{default: PARALLEL}, // NONCOMP
+                  '{default: MERGED}},  // CONV
+    PipeConfig: BEFORE
+  };
+
   localparam fpu_implementation_t DEFAULT_SNITCH = '{
     PipeRegs:   '{default: 1},
     UnitTypes:  '{'{default: PARALLEL}, // ADDMUL

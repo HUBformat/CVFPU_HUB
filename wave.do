@@ -11,5 +11,5 @@ add wave /tb_fpnew_simple/flush_i
 add wave /tb_fpnew_simple/in_ready_o
 add wave /tb_fpnew_simple/result_o
 add wave /tb_fpnew_simple/status_o
-add wave /tb_fpnew_simple/tag_o
 add wave /tb_fpnew_simple/out_valid_o
+add wave /tb_fpnew_simple/busy_o

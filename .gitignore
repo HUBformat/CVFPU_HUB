@@ -2,4 +2,8 @@
 html
 Bender.lock
 *.log
+*.mpf
+*.wlf
+*.vcd
+transcript
 work/
