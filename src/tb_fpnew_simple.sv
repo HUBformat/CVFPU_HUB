@@ -143,13 +143,16 @@ module tb_fpnew_simple;
       //end
 
       // Esperar a que el resultado esté disponible
+
+      //CAMBIO 1
       @(posedge clk);
       wait(out_valid_o == 1'b1);
 
       in_valid_i = 1'b0; // Desactivar 'in_valid_i' después de que la FPU acepte los datos.
       out_ready_i = 1'b0; // Desactivar 'out_ready_i' después
 
-      if (op_i == fpnew_pkg::DIV) begin
+      //CAMBIO 2
+      if (op_i == fpnew_pkg::DIV || op_i == fpnew_pkg::SQRT) begin
         @(posedge clk);
       end
 
